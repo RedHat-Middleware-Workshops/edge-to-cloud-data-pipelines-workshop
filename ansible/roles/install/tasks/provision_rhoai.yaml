@@ -213,7 +213,7 @@
 
 - name: Copy Pipeline definition to Workbench
   shell: 
-    cmd: "oc cp ../workbench/. wb1-0:. -n tf"
+    cmd: "oc cp ../pipelines/. wb1-0:. -n tf"
   # register: sub_token_request
 
 
