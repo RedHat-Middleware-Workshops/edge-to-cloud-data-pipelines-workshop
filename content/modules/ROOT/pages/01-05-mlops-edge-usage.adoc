@@ -22,6 +22,10 @@ NOTE: For purposes of supporting a large lab exercise the lab developers have si
 
 As mentioned in the *NOTES:* your {user}-mlops project in OpenShift will now contain all pieces for the end to end application. Normally we would spread these out across multiple hybrid cloud tiers.
 
+First you need to download some test images onto your lab laptop to use with the Shopping Application.
+
+include::partial$download-test-images.adoc[]
+
 You project should look some similar to the following
 
 [.bordershadow]

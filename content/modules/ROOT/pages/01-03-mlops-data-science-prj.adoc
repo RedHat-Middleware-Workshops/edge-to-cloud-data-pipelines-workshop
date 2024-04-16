@@ -24,7 +24,7 @@ In this section, each of you will
 * If you completed the last section you should be looking at the main view into OpenShift AI Dashboard application
 
 [.bordershadow]
-image::01-03/OCP-AI-MainView.png[width=75%]
+image::01-03/01-OCP-AI-MainView.png[width=75%]
 
 
 * In the OpenShift AI Dashboard application, navigate to the Data Science Projects menu on the left
@@ -36,20 +36,21 @@ IMPORTANT: Your assigned user is {user}. Don't mess that up or things will break
 IMPORTANT: As a reminder, it should **NOT** be `userX` (for you, `X` should be a number instead)
 
 [.bordershadow]
-image::01-03/OCPAI-DataScience-Prjs.png[width=75%]
+image::01-03/02-OCPAI-DataScience-Prjs.png[width=75%]
 
 * You will now see the contents of your Data Science Project, which you will now finish building.
 
 [.bordershadow]
-image::01-03/OCPAI-DS-Prj-InitialView.png[]
+image::01-03/03-OCPAI-DS-Prj-InitialView.png[]
 
 == Create a Data Connection for the pipeline server
 
 * We have deployed an instance of Minio in the cluster to act as a simple Object Storage for our purposes.
 * You will need to **Add data connection** that points to it.
 +
+
 [.bordershadow]
-image::01-03/AddDataConnection.png
+image::01-03/04-AddDataConnection.png[width=75%]
 
 * Here is the information you need to enter:
 ** Name:
@@ -74,7 +75,7 @@ Minio Data Connection
 [.console-input]
 [source, text]
 [subs=attributes+]
-{minio-endpoint}
+http://minio-service.{user}-lab1-mlops.svc:9000
 ** Region:
 [.lines_space]
 [.console-input]
@@ -90,7 +91,7 @@ workbench
 * The result should look like:
 +
 [.bordershadow]
-image::01-03/AddDataConnection2.png[]
+image::01-03/05-AddDataConnection2.png[]
 
 == Create a Pipeline Server
 
@@ -99,22 +100,22 @@ It is highly recommended to create your pipeline server before creating a workbe
 * In your Data Science Project (DSP), click on **Configure a pipeline Server**
 +
 [.bordershadow]
-image::01-03/pipelineserver01.png[]
+image::01-03/06-pipelineserver01.png[]
 
 * Select the Data Connection created earlier (**Minio Data Connection**) and click the **Configure** button:
 +
 [.bordershadow]
-image::01-03/pipelineserver02.png[]
+image::01-03/07-pipelineserver02.png[]
 
 * When filling out your configuration, your screen will look like the following:
 +
 [.bordershadow]
-image::01-03/pipelineserver03.png[]
+image::01-03/08-pipelineserver03.png[]
 
 * When your pipeline server is ready, your screen will look like the following:
 
 [.bordershadow]
-image::01-03/pipelineserver04.png[]
+image::01-03/09-pipelineserver04.png[]
 At this point, your pipeline server is ready and deployed.
 
 IMPORTANT: You need to **wait** until that screen is ready. If it's still spinning, wait for it to complete. If you continue and create your workbench **before** the pipeline server is ready, your workbench will not be able to submit pipelines to it.
@@ -126,7 +127,7 @@ IMPORTANT: You need to **wait** until that screen is ready. If it's still spinni
 * Create a workbench
 +
 [.bordershadow]
-image::01-03/create-wb.png[]
+image::01-03/10-create-wb.png[]
 * Make sure it has the following characteristics:
 ** Name
 [.lines_space]
@@ -137,7 +138,6 @@ image::01-03/create-wb.png[]
 ** Image selection `TensorFlow`
 ** Version selection `2023.2 (Recommended)`
 ** Container size `Medium`
-** Accelerator `None`
 ** Cluster storage --> Create new persistent storage
 ** Name
 [.lines_space]
@@ -155,37 +155,37 @@ NOTE: Don't change the Persistent storage size
 ** Top of workbench view
 +
 [.bordershadow]
-image::01-03/launch-workbench-01.png[]
+image::01-03/11-launch-workbench-01.png[]
 
 ** Middle of workbench view
 +
 [.bordershadow]
-image::01-03/launch-workbench-02.png[]
+image::01-03/12-launch-workbench-02.png[]
 +
 ** Bottom of workbench view
 +
 [.bordershadow]
-image::01-03/launch-workbench-03.png[]
+image::01-03/13-launch-workbench-03.png[]
 +
 * Wait for your workbench to be fully started
 ** Status will be `Running`
 * Once it is, click the **Open** Link to connect to it.
 +
 [.bordershadow]
-image::01-03/open-wb-link.png[]
+image::01-03/14-open-wb-link.png[]
 
 * Authenticate with the same credentials as earlier
 * You will be asked to accept the following settings:
 ** Click *Allow selected permissions*
 +
 [.bordershadow]
-image::01-03/accept.png[]
+image::01-03/15-accept.png[]
 
 
 * You should now see this:
 +
 [.bordershadow]
-image::01-03/jupyter-mainview.png[]
+image::01-03/16-jupyter-mainview.png[]
 
 == Git-Clone the common repo
 
@@ -195,7 +195,7 @@ We will clone the content of our Git repo so that you can access all the materia
 ** Open the Git UI in Jupyter:
 +
 [.bordershadow]
-image::01-03/git-clone-1.png[width=50%]
+image::01-03/17-git-clone-1.png[width=50%]
 +
 ** Enter the URL of the Git repo:
 +
@@ -207,12 +207,12 @@ image::01-03/git-clone-1.png[width=50%]
 ----
 +
 [.bordershadow]
-image::01-03/git-clone-2.png[width=75%]
+image::01-03/18-git-clone-2.png[width=75%]
 
 At this point, your project is ready for the work we want to do in it.
 
 You should a view similar to this.
 [.bordershadow]
-image::01-03/initial-git-load-view.png[width=85%]
+image::01-03/19-initial-git-load-view.png[width=85%]
 
 *Now lets move onto working with the Juypter notebooks and build some models.*

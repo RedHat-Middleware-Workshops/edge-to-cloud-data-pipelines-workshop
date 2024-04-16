@@ -1,0 +1,56 @@
+
+== Logging back into the OpenShift AI Environment
+You may be able to skip some of the following steps depending upon what part of the enviroment your session timed out, or which tabs you may have accidently closed.
+
+NOTE: If you have also lost your OpenShift Console, you should first re-open that with this guidance xref:./01-ocp-re-open-console.adoc[Re/Open OpenShift Console]
+
+
+=== Opening an OpenShift AI Console Web Browser Tab
+* Starting at the upper left of the OCP Console Tab, click on the matrix menu and OpenShift AI menu item
+
+
+[.bordershadow]
+image::includes/02/01-ocpai-menu.png[width=75%]
+
+=== If it doesn't remember your session
+* Click to Enter the login screen
+
+[.bordershadow]
+image::includes/02/01.1-ocp-ai-splash.png[width=75%]
+
+* Enter your existing credentials
+** Your account id: `{user}`
+** Your password: `{password}`
+
+[.bordershadow]
+image::includes/02/02-ocp-ai-login.png[width=75%]
+
+* Click on Data Sciene Projects
+
+[.bordershadow]
+image::includes/02/03-ocp-ai-init-page.png[width=75%]
+
+* You will see your pre-created Data Science Project
+** Open your workbench by clicking on the link
+** Your workbench name should be named *_{user}Workbench_*
+
+[.bordershadow]
+image::includes/02/04-ocpai-dsp-new.png[]
+
+== If it requires you to re-login into your workbench
+* Log into your workbench using your existing user credentials
+
+[.bordershadow]
+image::includes/02/05-wb-login.png[width=75%]
+
+* The first time you log in you may need to *allow sected permissions*
+
+[.bordershadow]
+image::includes/02/06-allow-permissions.png[width=75%]
+
+
+* You will see the initial view of your Jupyter Environment
+** Jupyter is an editing and execution environment that allows data scientists and others to create "notebooks" of Python code, with text comments and graphics that together create an integrated coding and execution environement to create AI/ML models.
+
+[.bordershadow]
+image::includes/02/07-wb-initial-view.png[width=75%]

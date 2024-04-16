@@ -10,4 +10,4 @@
 ** xref:02-02-appdev-edge-app-services.adoc[Application Services]
 ** xref:02-03-appdev-edge-shopper.adoc[Shopping Application]
 ** xref:02-04-appdev-adding-new-product.adoc[Adding a New Product]
-** xref:02-05-appdev-edge-camel-price.adoc[Pricing Engine]
+** xref:02-05-appdev-edge-camel-price.adoc[Optional: AppDev with Pricing Engine]

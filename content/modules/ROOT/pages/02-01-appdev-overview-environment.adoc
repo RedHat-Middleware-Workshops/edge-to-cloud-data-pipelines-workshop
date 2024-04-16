@@ -2,15 +2,16 @@
 
 == Overview
 
-In this lab each user will be exposed to an _art of the possible approach_ for how separate application services that together create an Edge based shopping application can operationalize deployed AI/ML models and apply business logic to solve business needs -- identifying and pricing a new product offering in a store or kiosk.
+In this lab each user will be exposed to an _Art of The Possible Approach_ for how separate application services can together create an Edge based shopping application.  This Shopping Application includes the use of "operationalized" deployed AI/ML image detection models, and applies business logic to solve business needs -- identifying and pricing a new product offering in a store or kiosk.
 
 Each user will perform the following tasks:
 
 * Log into OpenShift Console and review their existing AppDev (edge application) project
 * Review and test the Model Serving component against an existing image detection model.
+* Review and test the Pricing Engine service.
 * Review and test the Red Hat Camel Quarkus based shopping application.
 * Initiate a pipeline run for the training, building, and deployment of a new image detection model.
-* Try out the new model through the shopping application
+* Try out the new model through the Shopping Application
 * (Optional) Review, modify, and test the Red Hat CamelK pricing engine service.
 
 
@@ -31,7 +32,7 @@ In our "Art of the Possible" scenario for this lab, we are using an "edge" appli
 * *The _Shopping GUI_* : This is the OpenShift deployment called  *shopper*. It is a Red Hat Camel Quarkus application that provides a GUI for shoppers to take pictures or load pictures of items they want to purchase.  The web based frontend can run on a computer or on phone web browsers.  This service works with the other services on the edge to identify the product and offer a price back to the shopper.
 * *The _Model Server_* : This is the Openshift deployment called *tf-server* :  It is a containerized TensorFlow Serving engine.  In this Lab we are using TensorFlow as our AI framework to build and run models. OpenShift AI supports many different frameworks and approaches. _This lab chose an approach that allows for smaller footprint model serving that can work disconnected from a central model server._ The *tf-service* calls a deployed model that was pushed out to a production S3 Bucket (Minio) on the "Edge".  This service provides *shopper* with image detection inferencing.
 * *The _Pricing Engine_* : This is the OpenShift deployment called *price-engine* :  It is a Red Hat CamelK service that is called by shopper to look up pricing for identified product pictures/images. Services like this provide the business logic for making decisons based upon what inferences models make.
-* *IoT Message Broker* : Each user edge project will have a service called *broker-amq*, which is an instance of Red Hat AMQ Broker running MQTT protocol. This demo can be ramped up into many different configurations and topologies. In many true edge scenarios a message broker running MQTT protocol provides a powerful lightweight approach for IoT scenarios. (MQTT is designed as an extremely lightweight publish/subscribe messaging transport that is ideal for connecting remote devices with a small code footprint and minimal network bandwidth.)
+* *IoT Message Broker* : Each user edge project will have a service called *broker-amq*, which is an instance of Red Hat AMQ Broker running MQTT protocol. This demo can be ramped up into many different configurations and topologies. In many true edge scenarios a message broker running MQTT protocol provides a powerful lightweight approach for IoT scenarios. (MQTT is designed as an extremely lightweight publish/subscribe messaging transport that is ideal for connecting remote devices -- like smartphones -- with a small footprint and minimal network bandwidth.)
 * *Edge Based S3 Data Services* : Each Edge project has its own compact Minio S3 storage capability deployed with the name *minio* : This is an S3 storage system where you can publish your models.  *tf-server* will load and use new and updated models as they are moved into the Edge production S3 bucket.
 
 NOTE: You’ll find in the Edge project other systems also deployed, but we won’t dive into them as they are of less importance to the main story. Some mentions will be done to them when the context is relevant.
@@ -63,7 +64,7 @@ In a new window or tab, open the following URL and log into OpenShift:
 [.bordershadow]
 image::02-01/ocp-login.png[width=75%]
 
-* After you authenticate, you should be taken into your {user}-lab2-edge project, and the result should look like:
+* After you authenticate, you should be taken into your *{user}-lab2-edge project*:
 ** You need to ensure you are in developer view, and have clicked on the Topology view option as indicated in the screenshot below.
 
 [.bordershadow]

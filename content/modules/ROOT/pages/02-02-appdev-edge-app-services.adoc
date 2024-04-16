@@ -6,17 +6,19 @@ The previous section introduced the main application components making up the co
 In this section you will:
 
 * Learn about how AI/ML models can be deployed or _operationalized_ on the edge.
-* Test the Model Server by invoking it via a REST call, causing it run an inference against an existing deployed model.
+* Test the Model Server by invoking it via a REST call, causing it to run an inference against an existing deployed model.
 * Test the Pricing Engine by invoking it directly.
 
 NOTE: In the next section we will cover the *shopper* service which provides the shoppers GUI experience and invokes the above services and their dependencies.
 
-You should be logged into the OpenShift Console, if you timed out or logged out, follow these instructions.  xref:../partials/ocp-re-open-console.adoc[Log Back into OpenShift]
+You should be logged into the OpenShift Console, if you timed out or logged out, follow these instructions.  
+
+xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift]
 
 == Operationalizing Models onto The Edge
 This section and the next section focus on services running in the Edge environment, and how they interact with deployed AI/ML models.
 
-_In a later section in this lab you will walk through adding a new product to your "store" on the edge.  The whole process or "MLOps Pipeline" of moving images to a centralized data science environment, training the new model, testing it, and pushing it out to the edge will be covered._
+_In a later section in this lab you will walk through adding a new product to your "store" on the edge.  The whole process or "MLOps Pipeline" of moving new dataset images to a centralized data science environment to build a new model, training the new model, testing it, and pushing it out to the edge will be covered._
 
 This section focuses on the edge experience using models. It is important to recognize our use case, which is one where store/kiosks are edge based in that they have their own remote compute capability in the store, sometimes called the "Near Edge."
 
@@ -24,17 +26,21 @@ The customers and store associates use the shopping application (running on the 
 
 == Invoking and Testing the Model Server *tf-server*
 
-There are many differnet model building and model serving engines and topologies that an Edge architecture can use.
+There are many different model building and model serving engines and topologies that an Edge architecture can use.  Red Hat OpenShift AI supports using commerical 3rd party approaches, and also allows developers and data scientists to use upstream open source approaches.
 
 Our use case supports stores which may not have constant connectivity to a centralized model server, and may also have very custom product models deployed for their store's niche clientele.  
 
-For this Art of the Possible approach the lab developers chose to use a flexible _model serving_ approach deploying *TensorFlow Serving* in the edge environment.  This allows the Shopping Application to function in a disconnected fashion from the central model training and central model repository.  
+For this Art of the Possible approach the lab developers chose to use a flexible _model serving_ approach deploying *TensorFlow Serving* engine in the edge environment.  This allows the Shopping Application to function in a disconnected fashion from the central model training and model repository.  
 
 The tensorflow approach also allows for using models that are setup to work with Base64 image formats which eases use. The model server is invoked via sending an image through a REST call.
 
 === Steps
 
-The following steps allow you directly call the Model Server running in your {user}-lab2-edge project.  You will invoke it using a REST call thrugh the cURL utility.
+First Ensure that you have downloaded the test images to your lab laptop. You should have done this in Lab 1, if you did not you can download them now.
+
+include::partial$ocp-open-cmd-line-terminal.adoc[]
+
+The following steps allow you to directly call the Model Server running in your {user}-lab2-edge project.  You will invoke it directly using a REST call thrugh the cURL utility.
 
 * Start in Developer view of your {user}-lab2-appdev project
 ** This may appear a bit cluttered as supporting services are also represented.
@@ -44,9 +50,9 @@ image::02-02/01-edge-prj-main-pieces.png[width=75%]
 
 * Locate the tf-server deployment
 ** You may have to click on the screen and hold/drag the mouse to locate it, or use the directional tools at the bottom of the screen.
-** The tf-server deployment is a pre-built tensorflow serving container downloaded from the TensorFlow site https://www.tensorflow.org/[TensorFlow Site]
+** The tf-server deployment is a pre-built tensorflow engine packaged as a container image. You can learn more about TensorFlow from the TensorFlow site https://www.tensorflow.org/[TensorFlow Site]
 
-* Click on the tf-server deployment and look at the deployment configuration
+* Click on the *tf-server* deployment and look at the deployment configuration
 ** Click on the tf-server deployment icon
 
 [.bordershadow]
@@ -73,7 +79,7 @@ image::02-02/04-tf-server.png[width=75%]
 [.bordershadow]
 image::02-02/05-tf-server.png[width=75%]
 
-* Notice that in the OpenShift deployment of the TensorFlow Server we just need to set a few variables.  The model server (TensorFlow) just needs to know where the current models are located and which model should be picked.  Later when you train a new model the model server will automaticaly use the new model deployed to the edge.
+* Notice that in the OpenShift deployment of the TensorFlow Server we just need to set a few variables.  The model server (TensorFlow) just needs to know where the current models are located and which model should be picked.  Later when you train a new model the model server will automaticaly use the new model version deployed to the edge.
 
 In many scenarios you would put these variables into an OpenShift ConfigMap, and externalize them from the deployment manifest. We will cover that approach with the pricing server.
 
@@ -86,9 +92,9 @@ image::02-02/06-tf-server.png[width=75%]
 
 include::partial$ocp-open-cmd-line-terminal.adoc[]
 
-* You can send a test image directly to the tensorflow server via REST call through the cURL utility.
+* You can send a test image directly to the tensorflow server via a REST call through the cURL utility.
 
-* Binary mode
+** Binary mode
 To send an image in binary via HTTP, copy the following curl command into the web terminal and hit enter/return:
 
 [.console-input]
@@ -100,7 +106,7 @@ curl -H 'Content-Type:application/octet-stream' ${MY_ROUTE}/binary --data-binary
 
 You should see a result like the following:
 
-* JSON mode
+** JSON mode
 To send a JSON message containing the image encoded in base64 use the following curl command:
 
 [.console-input]
@@ -114,9 +120,9 @@ curl -X POST -H "Content-Type: application/json" -d @- ${MY_ROUTE}/detection
 You should see a result like the following
 
 
-== Invoking the Pricing Engine *price-engine*
+== Invoking the Pricing Engine:  *price-engine*
 
-In this Art of the Possible Lab, the business logic to decide a price is implemented by a simple micro service *price-engine*.  
+In this Art of the Possible Lab, the business logic to decide a price is implemented by a simple micro service named *price-engine*.  
 
 _When building edge applications consisting of multiple services.  You can quickly create small micro services in OpenShift to test functionality for different scenarios._
 
@@ -141,7 +147,7 @@ image::02-02/01-03.2-catalogue.png[width=75%]
 
 
 
-NOTE:  The *shopper* service calls the *pricing-engine* and passes it the the "item: <tea name>" and the label and price are returned, if it is in the price listing.
+NOTE:  The *shopper* service calls the *pricing-engine* and passes it the "item: <tea name>".  The microserivce then looks up and returns the label and price, if it is in the catalogue listing.
 
 
 _There is an optional section at the end of the lab that takes you into the CamelK route.  This uses DevSpaces and gives a deeper developer view of the possibilites of expanded use of application services and inner loop development on OpenShift._
@@ -192,7 +198,7 @@ We will simulate that now by calling the pricing engine directly using it's expo
 include::partial$ocp-open-cmd-line-terminal.adoc[]
 
 
-* Now you test the pricing engine directly by running a Curl command in the terminal window.
+* Now you can test the pricing engine directly by running a Curl command in the terminal window.
 
 [.console-input]
 [source,adoc]

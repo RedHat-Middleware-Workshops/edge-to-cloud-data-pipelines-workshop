@@ -42,7 +42,7 @@ In a new window or tab, open the following URL and log into OpenShift:
 [.bordershadow]
 image::01-02/ocp-login.png[width=75%]
 
-* After you authenticate, you should be taken into your {user}-mlops project, and the result should look like:
+* After you authenticate, you should be taken into your {user}-lab1-mlops project, and the result should look like:
 
 [.bordershadow]
 image::01-02/ocp-initial-userproject.png[width=75%]
@@ -51,7 +51,7 @@ image::01-02/ocp-initial-userproject.png[width=75%]
 On the upper Right of the OpenShift Console screen click on the grid menu icon and from there click on the Red Hat OpenShift AI menu option
 
 [.bordershadow]
-image::01-02/OCP-AI-Menu-option.png[width=50%]
+image::01-02/OCP-AI-Menu-option.png[width=80%]
 
 * The first time you log into OpenShift AI you will see a login splash screen, click on the login button and fill out your user login information.
 

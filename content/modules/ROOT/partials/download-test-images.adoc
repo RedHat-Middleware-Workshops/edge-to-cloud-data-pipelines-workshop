@@ -1,0 +1,17 @@
+=== Download Test Images
+
+Steps
+
+* Open the Test Images Download Web Application
+** https://test-images-central.apps.{openshift_cluster_ingress_domain}/[https://test-images-central.apps.{openshift_cluster_ingress_domain}/]
+
+[.bordershadow]
+image::partials/test-images-app1.png[width=75%]
+
+
+* Click on the download links for each of the three tea package images.
+
+[.bordershadow]
+image::partials/test-images-app2.png[width=75%]
+
+* Images should be saved to your */home/user/Downloads* directory on your RHEL Lab laptop.

@@ -1,7 +1,7 @@
 = Defining, Deploying, and Testing The Pricing Engine
 
 == Overview
-In this section you will investigate the existing pricing engine, deploy it, and then test it.  The pricing service aka *camel-price* service was introduced in the overview section for this lab.
+In this section you will investigate the existing pricing engine, deploy it, and then test it.  The pricing service aka *camel-price* service was introduced in an earlier section for this lab.
 
 The approach taken in this lab is to implement a simple pricing engine using Red Hat CamelK, which is a lightweight cloud native integration and data transformation technology. It is one of the main implementations of the upstream Camel project.  It provides developers with over 200 pre-built connectors to message brokers, databases, etc.. One also has the ability to quickly implement REST services, and manipulate data packets and protocol headers in powerful ways.
 
