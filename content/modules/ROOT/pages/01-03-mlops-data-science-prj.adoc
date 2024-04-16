@@ -31,7 +31,7 @@ image::01-03/01-OCP-AI-MainView.png[width=75%]
 
 IMPORTANT: Your assigned user is {user}. Don't mess that up or things will break later on
 
-* Click on your your Project link which should be {userX}-mlops
+* Click on your your Project link which should be {userX}lab1-mlops
 
 IMPORTANT: As a reminder, it should **NOT** be `userX` (for you, `X` should be a number instead)
 
