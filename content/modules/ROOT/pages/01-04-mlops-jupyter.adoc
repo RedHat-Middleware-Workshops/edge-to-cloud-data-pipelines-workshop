@@ -6,7 +6,7 @@ In this module you will load and run 3 python notebooks. Each one is annotated t
 The 3 notebooks and what they do is as follows:
 
 * *redbag-base.ipynb*
-** Loads an initial public facing image model in the tensorflow framework
+** Loads an initial public facing image detection model in the tensorflow framework
 ** Walks you through running the model against a saved image and then saving the model with a Base64 signature in your workbench env
 * *redbag-custom.ipynb*
 ** Builds a new image detection model for a new *product* that represents an image classifier deep network.
@@ -14,7 +14,7 @@ The 3 notebooks and what they do is as follows:
 ** The notebook then analyzes and tests the model.
 ** The model is then saved for eventual use as an *operationalized model*.
 * *redbag-push-latest.ipynb*
-** This notebook takes the created model that was saved in your local workbench environment, and moves it into an S3 bucket.  In this case into the production bucket in MinIO, where it can be accessed by the client "Edge" application set.
+** This notebook takes the created model that was saved in your local workbench environment, and moves it into an S3 bucket.  In this case into the "production bucket," where it can be accessed by the client "Edge" application set.
 
 NOTE: The lab instructors will lead you through an overview of the approaches and steps to complete this module. Remember that this lab is an "Art of the Possible" lab to share some knowledge and prototyping techniques.
 
@@ -29,10 +29,11 @@ In your workbench:
 
 . In the left hand navigation menu, navigate to the folder called:
 
-`edge-to-cloud-pipelines-workshop/workbench`
+`edge-to-cloud-pipelines-workshop/workbench` _Double-click on the directories_
+
 
 [.bordershadow]
-image::01-04/02-folder-nav1.png[width=75%]
+image::01-04/02.1-folder-nav1.png[width=75%]
 
 . Open the notebook called `redbag-base.ipynb`
 +
@@ -71,6 +72,9 @@ image::01-04/08-models-dir1.png[width=75%]
 * You will basically double click on the folders starting at models,
 
 [.bordershadow]
+image::01-04/08.1-models-dir1.png[width=75%]
+
+[.bordershadow]
 image::01-04/09-models-dir2.png[width=75%]
 
 * Work your way down into the redbag / 1   (version 1) folder
@@ -80,7 +84,7 @@ image::01-04/09-models-dir2.png[width=75%]
 image::01-04/10-models-dir3-redbag.png[width=75%]
 
 
-NOTE: When looking at the *models* directory you will notice two different model directories, which are base and redbag.  The *base* model directory is the build of the model that works directly with the raw image file.  The *redbag* version of the model is the saved version that has a signature that allows for Base64 image format inferencing.  The TensorFlow approach we are using allows creating models that support Base64 encoding, which is easier to work with when building Edge applications that call the model.
+NOTE: When looking at the *models* directory you will notice two different model directories, which are base and redbag.  The *base* model directory is the build of the model that can inference against binary image files.  The *redbag* version of the model is the saved version that has a signature that allows for Base64 image format inferencing.  The TensorFlow approach we are using allows creating models that support Base64 encoding, which is easier to work with when building Edge applications that call the model.
 
 * Now return back to the main *workbench* directory where the notebooks are located.
 ** click on the *...* directory indicator as shown in the following screenshot
@@ -102,18 +106,23 @@ image::01-04/13-custom-model-nb-view.png[width=75%]
 == Run The *redbag-custom.ipynb* to Create a Trained Model
 Now that you have run your first notebook against an existing model, it's time to open the *redbag-custom.ipynb* notebook and using the guidance for running the first notebook, step through the Transfer Learning approach.
 
+
 [.bordershadow]
 image::01-04/13-custom-model-nb-view.png[width=75%]
 
 * Click the  *Restart the kernel* icon
-* Step through the notebook *Run the selected cell...* icon
 
 [.bordershadow]
 image::01-04/14-custom-model-step-run.png[width=75%]
 
+* Step through the notebook *Run the selected cell...* icon
+
+[.bordershadow]
+image::01-04/14.1-custom-model-step-run.png[width=75%]
+
 TIP: If you were exploring the file and and then restarted the kernel, ensure you move your cursor back up to the first cell in the notebook, so that when you step through you are starting at the beginning of the notebook
 
-* You will notice as you step through this notebook that your loading a dataset of images stored in the github repository you loaded.
+* You will notice as you step through this notebook that your loading a dataset of images stored in the github repository you cloaned.
 
 [.bordershadow]
 image::01-04/15-custom-model-dataset.png[width=75%]
@@ -134,7 +143,7 @@ image::01-04/17-cm-train-new-model.png[width=75%]
 image::01-04/18-cm-save-new-model.png[width=75%]
 
 == Move the Trained model to an S3 Bucket *redbag-push-latest.ipynb*
-You can now go ahead and open the *redbag-push-latest.ipynb* notebook and run it. This will move the local model to an S3 bucket on MinIO and be available for the TensorFlow Serving service to load and use in the Edge application set.
+You can now go ahead and open the *redbag-push-latest.ipynb* notebook and run it. This will move the local model to an S3 bucket and be available for the TensorFlow Serving service to load and use in the Edge application set.
 
 [.bordershadow]
 image::01-04/19-nb3-save2s3.png[width=75%]

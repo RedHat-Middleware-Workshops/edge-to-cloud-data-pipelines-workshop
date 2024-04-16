@@ -18,7 +18,7 @@ asciidoc:
     git-clone-repo-branch: main
     user: userX
     password: openshift
-    openshift_cluster_ingress_domain: cluster-sq98t.sandbox2920.opentlc.com
+    openshift_cluster_ingress_domain: apps.cluster-9grcs.sandbox1987.opentlc.com
     openshift_console_url: https://console-openshift-console.apps.{openshift_cluster_ingress_domain}/
     rhoai_dashboard_url: https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}/
     page-links:
