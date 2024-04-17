@@ -1,3 +1,5 @@
+:imagesdir: ../assets/images
+
 = MLOps - Lab Overview, Environment, and Logins
 
 == Overview
@@ -14,12 +16,16 @@ Each user will perform the following tasks:
 * Run the Jupyter notebooks to create, test, and deploy a new model
 * Operationalize the created/deployed model by calling it from the Edge based shopping application
 
+{empty} +
+
 From a high-level view each user will have all their required services available in their own unique OpenShift project. This is to support the limitations inherent in a lab environment.  
 
 [.bordershadow]
 image::01-02/lab1-layout.png[width=100%]
 
 In an actual enteprise development and deployement environment the actual services would be spread out onto different OpenShift environments, which may include cloud based, data center based, single node OpenShift installations, and edge device based MicroShift installations.
+
+{empty} +
 
 == Environment information
 For the purposes of this Lab, we have provisioned a single OpenShift cluster, with OpenShift AI deployed on it, along with all the Application Services Operators and running instances required to complete the modules.
@@ -31,6 +37,8 @@ If you are using the customized version of the instructions, the information bel
 * Your account id: `{user}`
 * Your password: `{password}`
 
+{empty} +
+
 === Log into the OpenShift Console
 In a new window or tab, open the following URL and log into OpenShift:
 
@@ -38,19 +46,25 @@ In a new window or tab, open the following URL and log into OpenShift:
 ** https://console-openshift-console.{openshift_cluster_ingress_domain}/[https://console-openshift-console.{openshift_cluster_ingress_domain}/]
 
 * Enter your credentials as detailed above (as detailed above)
-
++
 [.bordershadow]
 image::01-02/ocp-login.png[width=75%]
 
-* After you authenticate, you should be taken into your *{user}-lab1-mlops* project, and the result should look like:
+{empty} +
 
+* After you authenticate, you should be taken into your *{user}-lab1-mlops* project, and the result should look like:
++
 [.bordershadow]
 image::01-02/1.1-initial-prj-view.png[width=75%]
 
-* You should ensure you are in the Developer perspective and click on the Topology view.
+{empty} +
 
+* You should ensure you are in the Developer perspective and click on the Topology view.
++
 [.bordershadow]
 image::01-02/1.1-initial-prj-view3.png[width=75%]
+
+{empty} +
 
 === Log into OpenShift AI
 On the upper Right of the OpenShift Console screen click on the grid menu icon and from there click on the Red Hat OpenShift AI menu option
@@ -58,23 +72,31 @@ On the upper Right of the OpenShift Console screen click on the grid menu icon a
 [.bordershadow]
 image::01-02/1.1.2-ocp-ai-menu.png[width=80%]
 
-* The first time you log into OpenShift AI you will see a login splash screen, click on the login button and fill out your user login information.
+{empty} +
 
+* The first time you log into OpenShift AI you will see a login splash screen, click on the login button and fill out your user login information.
++
+--
 ** Your account id: `{user}`
 ** Your password: `{password}`
-
+--
++
 [.bordershadow]
 image::01-02/LoginSplashScreen.png[width=50%]
-
++
 [.bordershadow]
 image::01-02/1.1.3-ocp-ai-login.png[width=60%]
 
-* If your login is successful then you should be viewing the main OpenShift AI Console
+{empty} +
 
+* If your login is successful then you should be viewing the main OpenShift AI Console
++
 [.bordershadow]
 image::01-02/1.1.4-ocp-ai-initial-page.png[width=75%]
 
-Now we will fill out the Data Science Project what was created for each user.
+{empty} +
+
+Next, we will fill out the Data Science Project what was created for each user.
 
 
 
