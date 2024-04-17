@@ -152,5 +152,61 @@ You can now go ahead and open the *redbag-push-latest.ipynb* notebook. This will
 [.bordershadow]
 image::01-04/19-nb3-save2s3.png[width=100%]
 
+== Directly Invoke the Model Server
 
-*Now let's invoke the model from an "Edge" application*
+So far you have used the Jupyter environment in OpenShift AI to build models and move them to a "production" S3 bucket.
+
+You can also use the terminal window in your Jupyter environment to test out the Model Server which is running as part of your Edge application.  There will be much more discussion and work with the Model Server (TensorFlow in this case) as you move further through the labs.
+
+For now just recognize that the model server loads the image detection model you just trained and moved to the S3 bucket.  And you can invoke it directly via a cURL command to ensure it is working correctly.
+
+In the AppDev module of this lab you will see how how various application services come together to build modern edge based applications infused with AI/ML capabilities.
+
+=== Steps
+
+* You can send a test image directly to the tensorflow server via a REST call through the cURL utility.
+
+* First you need to open up a terminal window in Jupyter
+** Click on the Launcher tab
+** Scroll down to the Terminal icon and click it to open a new terminal
+
+[.bordershadow]
+image::01-04/1-Jupyter-terminal.png[width=100%]
+
+[.bordershadow]
+image::01-04/1-Jupyter-terminal.png[width=100%]
+
+
+* You should now have a terminal window open and can run commands to test the Model Server directly.
+** you might want to run the *pwd* command to ensure you are in the correct directory _/opt/app-root/src/edge-to-cloud-pipelines-workshop/workbench_
+
+[.bordershadow]
+image::01-04/3-Jupyter-terminal.png[width=100%]
+
+** Binary mode
+To send an image in binary via HTTP, copy the following curl command into the web terminal and hit enter/return:
+
+[.console-input]
+[source,adoc]
+[subs=attributes+]
+MY_IMAGE=./samples/bali-tea.jpeg && \
+MY_ROUTE=tf-server.svc:8501 && \
+curl -H 'Content-Type:application/octet-stream' ${MY_ROUTE}/binary --data-binary @${MY_IMAGE}
+
+You should see a result like the following:
+
+** JSON mode
+To send a JSON message containing the image encoded in base64 use the following curl command:
+
+[.console-input]
+[source,adoc]
+[subs=attributes+]
+MY_IMAGE=./samples/bali-tea.jpeg && \
+MY_ROUTE=tf-server.{user}-lab1-mlops.svc:8501 && \
+(echo -n '{"image": "'; base64 $MY_IMAGE; echo '"}') | \
+curl -X POST -H "Content-Type: application/json" -d @- ${MY_ROUTE}/detection
+
+You should see a result like the following
+
+
+*Now let's invoke the model from an "Edge" Shopping Application*
