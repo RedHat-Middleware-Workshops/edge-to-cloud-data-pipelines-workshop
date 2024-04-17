@@ -45,7 +45,7 @@ image::01-03/03-OCPAI-DS-Prj-InitialView.png[]
 
 == Create a Data Connection for the pipeline server
 
-* We have deployed an instance of Minio in the cluster to act as a simple Object Storage for our purposes.
+* A NooBaa S3 Storage capability has been installed on top of Red Hat OpenShift Data Foundation in the lab cluster for our purposes.
 * You will need to **Add data connection** that points to it.
 +
 
@@ -57,25 +57,26 @@ image::01-03/04-AddDataConnection.png[width=75%]
 [.lines_space]
 [.console-input]
 [source, text]
-Minio Data Connection
+S3 Data Connection
+
 ** Access Key:
 [.lines_space]
 [.console-input]
 [source, text]
 [subs=attributes+]
-{minio-user}
+{user}
 ** Secret Key:
 [.lines_space]
 [.console-input]
 [source, text]
 [subs=attributes+]
-{minio-pass}
+secret
 ** Endpoint:
 [.lines_space]
 [.console-input]
 [source, text]
 [subs=attributes+]
-http://minio-service.{user}-lab1-mlops.svc:9000
+http://rook-ceph-rgw-ocs-storagecluster-cephobjectstore.openshift-storage.svc.cluster.local:80
 ** Region:
 [.lines_space]
 [.console-input]
@@ -86,7 +87,8 @@ none
 [.lines_space]
 [.console-input]
 [source, text]
-workbench
+[subs=attributes+]
+{user}-workbench 
 
 * The result should look like:
 +
@@ -97,12 +99,12 @@ image::01-03/05-AddDataConnection2.png[]
 
 It is highly recommended to create your pipeline server before creating a workbench. So let's do that now!
 
-* In your Data Science Project (DSP), click on **Configure a pipeline Server**
+* In your Data Science Project (DSP), click on **Configure pipeline Server**
 +
 [.bordershadow]
 image::01-03/06-pipelineserver01.png[]
 
-* Select the Data Connection created earlier (**Minio Data Connection**) and click the **Configure** button:
+* Select the Data Connection created earlier (**S3 Data Connection**) and click the **Configure** button:
 +
 [.bordershadow]
 image::01-03/07-pipelineserver02.png[]
@@ -134,23 +136,31 @@ image::01-03/10-create-wb.png[]
 [.console-input]
 [source, text]
 [subs=attributes+]
-{user}Workbench
+{user}-Workbench
 ** Image selection `TensorFlow`
 ** Version selection `2023.2 (Recommended)`
 ** Container size `Medium`
-** Cluster storage --> Create new persistent storage
-** Name
+** Cluster storage 
+*** Create new persistent storage
+*** Name
 [.lines_space]
 [.console-input]
 [source, text]
 [subs=attributes+]
-{user}Workbench
+{user}-Workbench
 +
 NOTE: Don't change the Persistent storage size
 +
-** Use a data connection `check the box`
-** Data connection `Minio Data Connection`
-* That should look like:
+** Data connections
+*** Use a data connection `check the box`
+Then
+*** Use existing data connection `click on`
+** Data connection `S3 Data Connection`
+
+[.bordershadow]
+image::01-03/10.1-wb-data-conn.png[width=50%]
+
+* After you are done filling all that out it should look like:
 +
 ** Top of workbench view
 +
@@ -167,7 +177,15 @@ image::01-03/12-launch-workbench-02.png[]
 [.bordershadow]
 image::01-03/13-launch-workbench-03.png[]
 +
+
+* You should then click  *Create workbench* 
+
+[.bordershadow]
+image::01-03/13-launch-workbench-04.png[]
+
+
 * Wait for your workbench to be fully started
+** *It may take a couple minutes*
 ** Status will be `Running`
 * Once it is, click the **Open** Link to connect to it.
 +
@@ -195,7 +213,7 @@ We will clone the content of our Git repo so that you can access all the materia
 ** Open the Git UI in Jupyter:
 +
 [.bordershadow]
-image::01-03/17-git-clone-1.png[width=50%]
+image::01-03/17-git-clone-1.png[width=75%]
 +
 ** Enter the URL of the Git repo:
 +

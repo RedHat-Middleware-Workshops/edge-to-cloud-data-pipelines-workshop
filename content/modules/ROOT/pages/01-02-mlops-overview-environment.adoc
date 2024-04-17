@@ -35,23 +35,28 @@ If you are using the customized version of the instructions, the information bel
 In a new window or tab, open the following URL and log into OpenShift:
 
 * The Red Hat OpenShift Console login page:
-** https://console-openshift-console.apps.{openshift_cluster_ingress_domain}/[https://console-openshift-console.apps.{openshift_cluster_ingress_domain}/]
+** https://console-openshift-console.{openshift_cluster_ingress_domain}/[https://console-openshift-console.{openshift_cluster_ingress_domain}/]
 
 * Enter your credentials as detailed above (as detailed above)
 
 [.bordershadow]
 image::01-02/ocp-login.png[width=75%]
 
-* After you authenticate, you should be taken into your {user}-lab1-mlops project, and the result should look like:
+* After you authenticate, you should be taken into your *{user}-lab1-mlops* project, and the result should look like:
 
 [.bordershadow]
-image::01-02/ocp-initial-userproject.png[width=75%]
+image::01-02/1.1-initial-prj-view.png[width=75%]
+
+* You should ensure you are in the Developer perspective and click on the Topology view.
+
+[.bordershadow]
+image::01-02/1.1-initial-prj-view3.png[width=75%]
 
 === Log into OpenShift AI
 On the upper Right of the OpenShift Console screen click on the grid menu icon and from there click on the Red Hat OpenShift AI menu option
 
 [.bordershadow]
-image::01-02/OCP-AI-Menu-option.png[width=80%]
+image::01-02/1.1.2-ocp-ai-menu.png[width=80%]
 
 * The first time you log into OpenShift AI you will see a login splash screen, click on the login button and fill out your user login information.
 
@@ -62,12 +67,12 @@ image::01-02/OCP-AI-Menu-option.png[width=80%]
 image::01-02/LoginSplashScreen.png[width=50%]
 
 [.bordershadow]
-image::01-02/OCP-AI-Login.png[width=60%]
+image::01-02/1.1.3-ocp-ai-login.png[width=60%]
 
 * If your login is successful then you should be viewing the main OpenShift AI Console
 
 [.bordershadow]
-image::01-02/OCP-AI-MainView.png[width=75%]
+image::01-02/1.1.4-ocp-ai-initial-page.png[width=75%]
 
 Now we will fill out the Data Science Project what was created for each user.
 
