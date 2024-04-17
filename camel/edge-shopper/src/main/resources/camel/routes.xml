@@ -292,7 +292,7 @@
             </when>
             <otherwise>
                 <!-- <to uri="{{endpoint.detections.host}}/predictions"/> -->
-                <to uri="{{endpoint.detections.host}}/v1/models/tea_model_b64:predict"/>
+                <to uri="{{endpoint.detections.host}}{{endpoint.detections.path}}"/>
             </otherwise>
         </choice>
 
