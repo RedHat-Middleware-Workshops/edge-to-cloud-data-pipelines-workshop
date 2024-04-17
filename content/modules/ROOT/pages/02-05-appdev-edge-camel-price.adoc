@@ -164,7 +164,7 @@ image::02-05/camel-price/10-kamel-run-price-engine.png[width=75%]
 [subs=attributes+]
 curl \
 -H "item: tea-lemon" \
-http://price-engine-edge1.apps.{openshift_cluster_ingress_domain}/price
+http://price-engine-edge1.{openshift_cluster_ingress_domain}/price
 
 * You should see output such as the following.
 

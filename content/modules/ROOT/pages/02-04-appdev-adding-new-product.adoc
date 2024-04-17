@@ -20,7 +20,7 @@ include::partial$ocp-re-open-console.adoc[]
 * Ensure you are are in your *{user}-lab2-edge* project
 
 * Get a visual perspective of some of the training data *new product images*.
-** Open the Minio UI: https://minio-ui-{user}-lab2-edge.apps.{openshift_cluster_ingress_domain}
+** Open the Minio UI: https://minio-ui-{user}-lab2-edge.{openshift_cluster_ingress_domain}
 
 
 *** Access Key ID: `{minio-user}`
@@ -82,7 +82,7 @@ TIP: A quick reminder: The existing model v1 you have been using with the shoppi
 
 === Steps
 ** Open the Shopping Application "Admin" Page
-** https://camel-edge-{user}-lab2-edge.apps.{openshift_cluster_ingress_domain}/[https://camel-edge-{user}-lab2-edge.apps.{openshift_cluster_ingress_domain}/]
+** https://camel-edge-{user}-lab2-edge.{openshift_cluster_ingress_domain}/[https://camel-edge-{user}-lab2-edge.{openshift_cluster_ingress_domain}/]
 
 [.bordershadow]
 image::02-04/admin-screen-view.png[width=75%]
