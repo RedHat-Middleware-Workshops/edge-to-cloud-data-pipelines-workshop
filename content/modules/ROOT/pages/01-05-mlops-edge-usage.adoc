@@ -43,7 +43,7 @@ image::test-images/tea-lemon.jpg[width=25%]
 
 You should still be logged into the OpenShift Console, and be able to switch to the web browser tab it is running in, but if you timed out or logged out, follow these instructions.  
 
-xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift]
+xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift,role=resource,window=_blank]
 
 Your project should look some similar to the following and you should be in the *{user}-lab1-mlops* project.  If you are confused or have issues, please ask the lab instructors for help.
 

@@ -13,7 +13,7 @@ NOTE: In the next section we will cover the *shopper* service which provides the
 
 You should be logged into the OpenShift Console, if you timed out or logged out, follow these instructions.  
 
-xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift]
+xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift,role=resource,window=_blank]
 
 == Operationalizing Models onto The Edge
 This section and the next section focus on services running in the Edge environment, and how they interact with deployed AI/ML models.

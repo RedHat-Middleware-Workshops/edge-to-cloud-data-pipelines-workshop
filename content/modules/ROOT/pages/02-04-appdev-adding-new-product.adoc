@@ -14,7 +14,12 @@ Then a camel service collects the images and kicks off a centralized data servic
 In this Lab section you will be invoking the pre-built set of services. In our lab environment those services are located on your *{user}-lab2-ds* project. and your store/kiosk edge project *{user}-lab2-edge*.
 
 
-include::partial$ocp-re-open-console.adoc[]
+=== OpenShift Console Check
+
+If you have lost your connection to the OpenShift Console, use the following guidance to return to your session.
+
+xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift,role=resource,window=_blank]
+
 
 === Intial Steps
 * Ensure you are are in your *{user}-lab2-edge* project
@@ -82,7 +87,7 @@ TIP: A quick reminder: The existing model v1 you have been using with the shoppi
 
 === Steps
 ** Open the Shopping Application "Admin" Page
-** https://camel-edge-{user}-lab2-edge.{openshift_cluster_ingress_domain}/[https://camel-edge-{user}-lab2-edge.{openshift_cluster_ingress_domain}/]
+** https://camel-edge-{user}-lab2-edge.{openshift_cluster_ingress_domain}/[https://camel-edge-{user}-lab2-edge.{openshift_cluster_ingress_domain}/,role=resource,window=_blank]
 
 [.bordershadow]
 image::02-04/admin-screen-view.png[width=75%]

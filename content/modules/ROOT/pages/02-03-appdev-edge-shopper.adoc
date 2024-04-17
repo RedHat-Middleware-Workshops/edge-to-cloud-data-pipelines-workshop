@@ -24,7 +24,7 @@ In this section you will complete the following tasks:
 
 You should be logged into the OpenShift Console, if you timed out, lost your browser tab, or logged out, follow these instructions.  
 
-xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift]
+xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift,role=resource,window=_blank]
 
 
 * Ensure you are in the _Developer_  _Topology_ view of your *{user}-lab2-edge* project.
