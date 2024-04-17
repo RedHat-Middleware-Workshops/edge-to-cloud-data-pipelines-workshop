@@ -3,7 +3,7 @@
 Steps
 
 * Open the Test Images Download Web Application
-** https://test-images-central.{openshift_cluster_ingress_domain}/[https://test-images-central.{openshift_cluster_ingress_domain}/]
+** https://test-images-central.{openshift_cluster_ingress_domain}/[https://test-images-central.{openshift_cluster_ingress_domain}/,role=resource,window=_blank]
 
 [.bordershadow]
 image::partials/test-images-app1.png[width=75%]
