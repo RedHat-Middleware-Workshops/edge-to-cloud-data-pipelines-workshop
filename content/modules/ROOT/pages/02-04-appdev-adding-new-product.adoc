@@ -3,7 +3,7 @@
 
 == Overview
 === Use Case
-In this section you be adding a new product.  From our use case, the store or kiosk is being asked about other tea varieties by customers, or a new tea vendor has a new niche offering in high demand and the store/chain wants to quickly add it to certain locations.
+In this section you will be adding a new product.  From our use case, the store or kiosk is being asked about other tea varieties by customers, or a new tea vendor has a new niche offering in high demand and the store/chain wants to quickly add it to certain locations.
 
 The vendor sends some marketing material, including lots of images of the new product and its packaging, *Bali Tea (Green Tea)*, to be used in store marketing or for placement information on the store website.  The store takes additional pictures of the new product and the shopper app uploads all the images to an S3 data source on the near edge.  
 
