@@ -10,21 +10,31 @@ In our scenario, we have created a new model for a new product *green tea* that 
 
 In our "Art of the Possible" scenario for this lab, we are using an "edge" application to call the image detection model. The application is made up of the following services:
 
-* *shopper* : The shopping application is a Red Hat Camel Quarkus application that provides a GUI for shoppers to take pictures or load pictures of items they want to purchase.  The web based frontend can run on computer or phone web browsers.  This service works with the other services on the edge to identify the product and offer a price back to the shopper.
-* *tf-server* :  This is a containerized TensorFlow Serving engine.  In this Lab we are using TensorFlow as our AI framework to build and run models.  Although OpenShift AI supports many different frameworks and approaches.  The *tf-service* calls the deployed model you built that was pushed out to the production S3 Bucket.  This service provides *shopper* with image detection inferencing.
-* *price-engine* :  This service is a Red Hat CamelK service that is called by shopper to look up pricing for identified product pictures/images. It provides the business logic for making decisions on what the inferencing returns.
-* *broker-amq* : Red Hat AMQ Broker running MQTT protocol. This demo can be ramped up into many different configurations and topologies. In many true edge scenarios a message broker running MQTT protocol provides a powerful lightweight approach for IoT scenarios. (MQTT is designed as an extremely lightweight publish/subscribe messaging transport that is ideal for connecting remote devices with a small code footprint and minimal network bandwidth.)
-* *minio* : Thi is the same S3 storage you used to publish your model to in the last exercise.  *tf-server* will load and use new and updated models as they are moved into the production S3 bucket.
+* Shopping Service: *shopper* : The shopping application is a Red Hat Camel Quarkus application that provides a GUI for shoppers to take pictures or load pictures of items they want to purchase.  The web based frontend can run on computer or phone web browsers.  This service works with the other services on the edge to identify the product and offer a price back to the shopper.
+* Model Server: *tf-server* :  This is a containerized TensorFlow Serving engine.  In this Lab we are using TensorFlow as our AI framework to build and run models.  Although OpenShift AI supports many different frameworks and approaches.  The *tf-service* calls the deployed model you built that was pushed out to the production S3 Bucket.  This service provides *shopper* with image detection inferencing.
+* Pricing Engine: *price-engine* :  This service is a Red Hat CamelK service that is called by shopper to look up pricing for identified product pictures/images. It provides the business logic for making decisions on what the inferencing returns.
 
 NOTE: For purposes of supporting a large lab exercise the lab developers have simplified the layout.  Normally the "Edge" tier running the above services would be running on an edge device running on something like Red Hat Device Edge with MicroShift, or Red Hat Single Node Openshift.  The edge (kiosk, store, remote location) would have it's own S3 storage that receives new models and updated models from an MLOps lifecycle that supports GitOps approaches. The edge environment would be either disconnected or partially connected to a central data center or cloud environment where the model building, training, and monitoring occurs. The lab presentors will cover explanations and approaches for more real-world topologies.
 
 ## Running the shopping application
 
-As mentioned in the *NOTES:* your {user}-mlops project in OpenShift will now contain all pieces for the end to end application. Normally we would spread these out across multiple hybrid cloud tiers.
+First you need to download some test images onto your lab laptop to use with the Shopping Application. 
 
-First you need to download some test images onto your lab laptop to use with the Shopping Application.
+** Right Click on each image to download
+** They should end up in your */home/user/Dowloads* directory on your RHEL Lab Laptop
 
-include::partial$download-test-images.adoc[]
+Green Tea (Bali Tea) 
+
+image::test-images/tea-bali.jpg[width=25%]
+
+Earl Grey Tea
+
+image::test-images/tea-earl-grey.jpg[width=25%]
+
+Lemon Tea
+
+image::test-images/tea-lemon.jpg[width=25%]
+
 
 You project should look some similar to the following
 
@@ -36,7 +46,7 @@ image::01-05/completed-topology-view.png[]
 * Locate the shopper deployment in the topology view in the Developer mode in OpenShift
 
 [.bordershadow]
-image::01-05/developer-view-userx-mlops.png[]
+image::01-05/completed-topology-view.png[]
 
 * Hover over the icon in the upper right-hand corner and click OpenURL
 

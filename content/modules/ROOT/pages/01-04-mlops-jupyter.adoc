@@ -143,10 +143,14 @@ image::01-04/17-cm-train-new-model.png[width=75%]
 image::01-04/18-cm-save-new-model.png[width=75%]
 
 == Move the Trained model to an S3 Bucket *redbag-push-latest.ipynb*
-You can now go ahead and open the *redbag-push-latest.ipynb* notebook and run it. This will move the local model to an S3 bucket and be available for the TensorFlow Serving service to load and use in the Edge application set.
+You can now go ahead and open the *redbag-push-latest.ipynb* notebook. This will move the local model to an S3 bucket and be available for the TensorFlow Serving service to load and use in the Edge application set.
+
+* *You will need to replace 2 variables at the top of the file before you run it.*
+** bucket_models = `"{user}-production"`
+** aws_access_key = `'{user}'`
 
 [.bordershadow]
-image::01-04/19-nb3-save2s3.png[width=75%]
+image::01-04/19-nb3-save2s3.png[width=100%]
 
 
 *Now let's invoke the model from an "Edge" application*
