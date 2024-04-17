@@ -11,7 +11,7 @@ Then a camel service collects the images and kicks off a centralized data servic
 
 *This is a working "Art of The Possible" example of a data pipeline from the edge back to the cloud.*
 
-In this Lab section you will be invoking the pre-built set of services. In our lab environment those services are located on your *{user}-lab2-ds* project. and your store/kiosk edge project *{user}-lab2-edge*.
+In this Lab section you will be invoking the pre-built set of services. In our lab environment those services are located on your *{user}-lab2-mlops* project. and your store/kiosk edge project *{user}-lab2-edge*.
 
 
 === OpenShift Console Check

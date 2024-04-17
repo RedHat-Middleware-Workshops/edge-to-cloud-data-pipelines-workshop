@@ -18,7 +18,7 @@ Each user will perform the following tasks:
 Each user will have all their required services available in their own OpenShift projects.
 
 * Edge Application Project:  *{user}-lab2-edge*
-* Data Science and Piplelines Project: *{user}-lab2-ds*
+* Data Science and Piplelines Project: *{user}-lab2-mlops*
 
 [.bordershadow]
 image::02-01/lab2-layout.png[width=100%]

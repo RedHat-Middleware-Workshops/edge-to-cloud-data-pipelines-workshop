@@ -42,7 +42,7 @@ include::partial$ocp-open-cmd-line-terminal.adoc[]
 
 The following steps allow you to directly call the Model Server running in your {user}-lab2-edge project.  You will invoke it directly using a REST call thrugh the cURL utility.
 
-* Start in Developer view of your {user}-lab2-appdev project
+* Start in Developer view of your {user}-lab2-edge project
 ** This may appear a bit cluttered as supporting services are also represented.
 
 [.bordershadow]
