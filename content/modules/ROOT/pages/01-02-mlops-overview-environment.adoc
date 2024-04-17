@@ -43,7 +43,7 @@ If you are using the customized version of the instructions, the information bel
 In a new window or tab, open the following URL and log into OpenShift:
 
 * The Red Hat OpenShift Console login page:
-** https://console-openshift-console.{openshift_cluster_ingress_domain}/[https://console-openshift-console.{openshift_cluster_ingress_domain}/]
+** https://console-openshift-console.{openshift_cluster_ingress_domain}/[https://console-openshift-console.{openshift_cluster_ingress_domain}/,role=resource,window=_blank]
 
 * Enter your credentials as detailed above (as detailed above)
 +
