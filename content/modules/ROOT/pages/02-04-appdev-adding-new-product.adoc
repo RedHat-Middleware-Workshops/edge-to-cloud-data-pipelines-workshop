@@ -32,7 +32,7 @@ xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift,role=resource,
 * Ensure you are are in your *{user}-lab2-edge* project
 
 * Get a visual perspective of some of the training data *new product images*.
-** Open the Minio UI: xref:https://minio-ui-{user}-lab2-edge.{openshift_cluster_ingress_domain}[{user} Mino GUI,role=resource,window=_blank]
+** Open the Minio UI: https://minio-ui-{user}-lab2-edge.{openshift_cluster_ingress_domain}[{user} Mino GUI,role=resource,window=_blank]
 
 
 *** Access Key ID: `{minio-user}`

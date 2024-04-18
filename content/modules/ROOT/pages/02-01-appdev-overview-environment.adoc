@@ -95,6 +95,6 @@ TIP: Throughout this lab you will end up having multiple web browser tabs open. 
 image::02-01/ocp-edge-init-project.png[width=75%]
 
 ** If you aren't in your *{user}-lab2-edge* project, click on the *Project* dropdown and select *{user}-lab2-edge*.
-
++
 [.bordershadow]
 image::02-01/ocp-edge-init-project2.png[width=75%]
