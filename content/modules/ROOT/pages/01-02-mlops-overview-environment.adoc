@@ -57,6 +57,11 @@ image::01-02/ocp-login.png[width=75%]
 [.bordershadow]
 image::01-02/1.1-initial-prj-view.png[width=75%]
 
+* If you aren't in your *{user}-lab1-mlops* project, click on the *Project* dropdown and select *{user}-lab1-mlops*.
++
+[.bordershadow]
+image::01-02/1.1-initial-prj-view1.png[width=75%]
+
 {empty} +
 
 * You should ensure you are in the Developer perspective and click on the Topology view.
