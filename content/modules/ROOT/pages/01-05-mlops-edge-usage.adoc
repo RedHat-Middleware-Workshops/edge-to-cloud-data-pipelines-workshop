@@ -1,3 +1,5 @@
+:imagesdir: ../assets/images
+
 = MLOps - Edge Applications and Operationalizing the Model
 
 
@@ -22,22 +24,23 @@ First you need to download some test images onto your lab laptop to use with the
 
 ** Right Click on each image to download
 ** They should end up in your */home/user/Dowloads* directory on your RHEL Lab Laptop
-
-Green Tea (Bali Tea) 
++
+--
+[.bordershadow]
+[.alignleft]
+.Bali Tea 
+image:test-images/tea-bali.jpg[my image, width=25%]
 
 [.bordershadow]
-image::test-images/tea-bali.jpg[width=25%]
-
-Earl Grey Tea
-
-[.bordershadow]
-image::test-images/tea-earl-grey.jpg[width=25%]
-
-Lemon Tea
+.Earl Grey Tea 
+image:test-images/tea-earl-grey.jpg[width=25%]
 
 [.bordershadow]
-image::test-images/tea-lemon.jpg[width=25%]
+.Lemon Tea 
+image:test-images/tea-lemon.jpg[width=25%]
+--
 
+{empty} +
 
 == Switch to The OpenShift Console
 
@@ -53,41 +56,54 @@ image::01-05/completed-topology-view.png[]
 == Test the Application
 
 * Locate the shopper deployment in the topology view in the Developer mode in OpenShift
-
++
 [.bordershadow]
 image::01-05/completed-topology-view.png[]
 
-* Hover over the icon in the upper right-hand corner and click OpenURL
+{empty} +
 
+* Hover over the icon in the upper right-hand corner and click OpenURL
++
 [.bordershadow]
 image::01-05/shopper-deployment.png[width=50%]
 
+{empty} +
+
 * Your web browswer will load the entry page to the example shopping application.  
 ** Click on *Enter Detection Mode*
-
++
 [.bordershadow]
 image::01-05/shopper-opening-main-view.png[]
 
-* Choose *Pick From Device*
+{empty} +
 
+* Choose *Pick From Device*
++
 [.bordershadow]
 image::01-05/pick-from-device.png[width=50%]
 
+{empty} +
 
 * Pick a tea image from the file selector as explained by your lab instructors.
-
++
 [.bordershadow]
 image::01-05/choose-tea.png[width=50%]
 
+{empty} +
+
 * You will be taken back to the main detection screen
 ** Click on *via HTTP* (transport type, later the lab instructors will show how to use MQTT IoT approaches)
-
++
 [.bordershadow]
 image::01-05/pick-http.png[width=50%]
 
-* If a price is present in the *price-engine* it will be flashed for a few seconds on the screen.  (If you conversely see N/A, then the image was not recognized as the new product).
+{empty} +
 
+* If a price is present in the *price-engine* it will be flashed for a few seconds on the screen.  (If you conversely see N/A, then the image was not recognized as the new product).
++
 [.bordershadow]
 image::01-05/tea-price.png[width=50%]
+
+{empty} +
 
 NOTE:  Since this lab is focused on how to introduce a new product, we are not loading additional models to be checked for other existing products.  We are focused on showing how business can support new product introdction using transfer learning.
