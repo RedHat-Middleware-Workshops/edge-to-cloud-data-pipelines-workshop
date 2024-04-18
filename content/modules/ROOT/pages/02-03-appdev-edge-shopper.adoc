@@ -1,3 +1,5 @@
+:imagesdir: ../assets/images
+
 = Shopper Application
 
 == Overview
@@ -27,91 +29,121 @@ In this section you will complete the following tasks:
 
 ** Right Click on each image to download
 ** They should end up in your */home/user/Dowloads* directory on your RHEL Lab Laptop
-
-Green Tea (Bali Tea) 
++
+--
+[.bordershadow]
+[.alignleft]
+.Bali Tea 
+image:test-images/tea-bali.jpg[my image, width=25%]
 
 [.bordershadow]
-image::test-images/tea-bali.jpg[width=25%]
-
-Earl Grey Tea
-
-[.bordershadow]
-image::test-images/tea-earl-grey.jpg[width=25%]
-
-Lemon Tea
+.Earl Grey Tea 
+image:test-images/tea-earl-grey.jpg[width=25%]
 
 [.bordershadow]
-image::test-images/tea-lemon.jpg[width=25%]
+.Lemon Tea 
+image:test-images/tea-lemon.jpg[width=25%]
+--
 
+{empty} +
 
-NOTE: You should be logged into the OpenShift Console, if you timed out, lost your browser tab, or logged out, follow these instructions.  
+[NOTE]
+--
+You should be logged into the OpenShift Console, if you timed out, lost your browser tab, or logged out, follow these instructions.  
 
 xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift,role=resource,window=_blank]
+--
 
+{empty} +
 
 * Ensure you are in the _Developer_  _Topology_ view of your *{user}-lab2-edge* project.
-
++
 [.bordershadow]
 image::02-03/01-developer-topology-edge.png[]
+
+{empty} +
 
 * Locate the *shopper* deployment icon
 ** You may have to click on the screen and hold/drag the mouse to locate it, or use the directional tools at the bottom of the screen.
 
-* Open up the shopper web page Option 1
+{empty} +
 
+* Open up the shopper web page Option 1
++
 [.bordershadow]
 image::02-03/08-open-shopper-url1.png[width=40%]
 
-* Open up the shopper web page Option 2
+{empty} +
 
+* Open up the shopper web page Option 2
++
 [.bordershadow]
 image::02-03/09.2-composite-url.png[width=100%]
 
-* You may be asked to allow usage of your camera click *Allow*
+{empty} +
 
+* You may be asked to allow usage of your camera click *Allow*
++
 [.bordershadow]
 image::02-03/10-allow-camera.png[width=40%]
 
-* You should now see the main entry page to the application, Click *Enter Detection Mode*
+{empty} +
 
+* You should now see the main entry page to the application, Click *Enter Detection Mode*
++
 [.bordershadow]
 image::02-03/11-shopper-index-page.png[width=75%]
+
+{empty} +
 
 * For purposes of this exercise we have an initial model that has been trained to recognize packaged *tea* that is on display and sold in the store or kiosk.
 
 * Click on *Pick from Device*
-
++
 [.bordershadow]
 image::02-03/12-Pick-from-Device.png[width=75%]
 
-* From the file selection choose *tea-earl-grey.jpg*
+{empty} +
 
+* From the file selection choose *tea-earl-grey.jpg*
++
 [.bordershadow]
 image::02-03/13-choose-tea-earl-grey.png[width=75%]
 
-* Click on *via MQTT* or *via HTTP* protocol
+{empty} +
 
+* Click on *via MQTT* or *via HTTP* protocol
++
 [.bordershadow]
 image::02-03/14-choose-MQTT-or-HTTP.png[width=75%]
-
++
 TIP: You can choose to send this image either by MQTT IoT protocol or HTTP protocol:  From an application development perspective here is what one needs to consider.  This application would normally be running on an edge device in the store or kiosk, and from a far edge perspective customers would be using their phones to view the website and take pictures of items to buy. Therefore in many cases MQTT would be the preferred protocol to send the data back and forth between the consumers phone and the edge device/server running the edge application set in the store.
-
++
 The Web GUI shopper service then calls the model server and pricing engine.
++
+--
 * Since this model has been trained on this type of tea package "Earl Grey," it should be identified by the Model Server.
 * After which the Pricing Engine ( the price-engine Camel K service we just looked at in the last section) returns a price for the product.
-
++
 [.bordershadow]
 image::02-03/15-positive-earl-grey.png[width=50%]
+--
+
+{empty} +
 
 * Pick another tea type.  This time pick *tea-bali.jpg*
-
++
 [.bordershadow]
 image::02-03/16-pick-tea-bali.png[width=75%]
 
-* Since Bali Tea (green tea) is not a current product being offered by the store
+{empty} +
 
+* Since Bali Tea (green tea) is not a current product being offered by the store
++
 [.bordershadow]
 image::02-03/17-negative-bali.png[width=50%]
+
+{empty} +
 
 This takes takes us the end of reviewing the major parts of the Shopping Application.  In the next section you will dive back into the overall use case driving this approach, and see how the overall "Art of The Possible" comes together.
 
