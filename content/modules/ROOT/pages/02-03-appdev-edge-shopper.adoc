@@ -20,9 +20,31 @@ In this section you will complete the following tasks:
 * Run a nagative test (unknown "new" product)
 * Discuss the need to train a new model focused on the new product.
 
+
 == Steps
 
-You should be logged into the OpenShift Console, if you timed out, lost your browser tab, or logged out, follow these instructions.  
+* Ensure you have downloaded the sample test images.  You should have done this in Lab 1 the MLOps Lab.  If you didn't, download them now.
+
+** Right Click on each image to download
+** They should end up in your */home/user/Dowloads* directory on your RHEL Lab Laptop
+
+Green Tea (Bali Tea) 
+
+[.bordershadow]
+image::test-images/tea-bali.jpg[width=25%]
+
+Earl Grey Tea
+
+[.bordershadow]
+image::test-images/tea-earl-grey.jpg[width=25%]
+
+Lemon Tea
+
+[.bordershadow]
+image::test-images/tea-lemon.jpg[width=25%]
+
+
+NOTE: You should be logged into the OpenShift Console, if you timed out, lost your browser tab, or logged out, follow these instructions.  
 
 xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift,role=resource,window=_blank]
 
@@ -55,9 +77,7 @@ image::02-03/10-allow-camera.png[width=40%]
 [.bordershadow]
 image::02-03/11-shopper-index-page.png[width=75%]
 
-* If we were using a multiple models of all products available or a general image detection algorithm we could take pictures or upload pictures of various items and see if they are identified properly.  The lab instructors will demonstrate this mode also.
-
-* For purposes of this exercise we have an initial model that has been trained to recognize packaged *tea*, that is on display and sold in the store or kiosk.
+* For purposes of this exercise we have an initial model that has been trained to recognize packaged *tea* that is on display and sold in the store or kiosk.
 
 * Click on *Pick from Device*
 
@@ -94,4 +114,6 @@ image::02-03/16-pick-tea-bali.png[width=75%]
 image::02-03/17-negative-bali.png[width=50%]
 
 This takes takes us the end of reviewing the major parts of the Shopping Application.  In the next section you will dive back into the overall use case driving this approach, and see how the overall "Art of The Possible" comes together.
+
+*Let's get going we have customers who want a new kind of tea offering!*
 
