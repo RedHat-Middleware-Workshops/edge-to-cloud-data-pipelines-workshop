@@ -76,9 +76,13 @@ image::02-01/ocp-login.png[width=75%]
 
 TIP: Throughout this lab you will end up having multiple web browser tabs open.  Make sure you are careful not to close tabs, as you may need them further in the exercises.  Shortcuts will be provided throughout the lab to help you log back in, if you accidently lose connection or time out of a session.
 
-* After you authenticate, you should be taken into your *{user}-lab2-edge project*:
+* After you authenticate, you need to be in your *{user}-lab2-edge* project:
 ** You need to ensure you are in *Developer* perspective, and have clicked on the *Topology* view option as indicated in the screenshot below.
 
 [.bordershadow]
 image::02-01/ocp-edge-init-project.png[width=75%]
 
+** If you aren't in your *{user}-lab2-edge* project, click on the *Project* dropdown and select *{user}-lab2-edge*.
+
+[.bordershadow]
+image::02-01/ocp-edge-init-project2.png[width=75%]
