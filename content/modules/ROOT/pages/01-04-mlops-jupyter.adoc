@@ -1,3 +1,5 @@
+:imagesdir: ../assets/images
+
 = MLOps - Jupyter Notebooks and TensorFlow Model Creation
 
 == Overview
@@ -28,18 +30,23 @@ image::01-04/01-initial-git-load-view.png[width=75%]
 In your workbench:
 
 . In the left hand navigation menu, navigate to the folder called:
-
-`edge-to-cloud-pipelines-workshop/workbench` _Double-click on the directories_
-
-
++
+`edge-to-cloud-pipelines-workshop/workbench`
++
+_Double-click on the directories_
++
 [.bordershadow]
 image::01-04/02.1-folder-nav1.png[width=75%]
++
+{empty} +
 
 . Open the notebook called `redbag-base.ipynb`
 +
 [.bordershadow]
 image::01-04/03-folder-nav1-file1.png[width=75%]
 +
+{empty} +
+
 . If you have never executed Cells in a Jupyter Notebook before, here is what you need to do:
 
 .. Click on the **Restart kernel** link:
@@ -51,57 +58,64 @@ image::01-04/04-restart-kernel-toolbar.png[width=75%]
 [.bordershadow]
 image::01-04/05-restart-kernel-mbox.png[width=75%]
 +
-. Run each cell, by repeatedly clicking on the **run cell** in the toolbar
+{empty} +
 
+. Run each cell, by repeatedly clicking on the **run cell** in the toolbar
++
 [.bordershadow]
 image::01-04/06-run-cell-notebook.png[width=75%]
-
-
++
 NOTE: As you click through the cells notice the markup comments indicating what is occuring in each section, and also note the output of each code section
-
++
 [.bordershadow]
 image::01-04/07-example-nb1-execution-view.png[width=75%]
-
++
 If the output of this notebook looks suspicious, please inform the people leading the lab.
 
 * Now look at the model directory and to confirm that the notebook did save the new models locally in the workbench directory
-
++
 [.bordershadow]
 image::01-04/08-models-dir1.png[width=75%]
 
 * You will basically double click on the folders starting at models,
-
++
 [.bordershadow]
 image::01-04/08.1-models-dir1.png[width=75%]
-
++
 [.bordershadow]
 image::01-04/09-models-dir2.png[width=75%]
++
+{empty} +
 
-* Work your way down into the redbag / 1   (version 1) folder
+* Work your way down into the `redbag/1`   (version 1) folder
 ** Notice that the actual model is made up of several files and folders
-
++
 [.bordershadow]
 image::01-04/10-models-dir3-redbag.png[width=75%]
-
-
++
 NOTE: When looking at the *models* directory you will notice two different model directories, which are base and redbag.  The *base* model directory is the build of the model that can inference against binary image files.  The *redbag* version of the model is the saved version that has a signature that allows for Base64 image format inferencing.  The TensorFlow approach we are using allows creating models that support Base64 encoding, which is easier to work with when building Edge applications that call the model.
++
+{empty} +
 
 * Now return back to the main *workbench* directory where the notebooks are located.
 ** click on the *...* directory indicator as shown in the following screenshot
-
++
 [.bordershadow]
 image::01-04/11-return2workbench-dir1.png[width=75%]
 
 ** Then click on *workbench* directory, as shown here
-
++
 [.bordershadow]
 image::01-04/12-return2workbench-dir2.png[width=75%]
++
+{empty} +
 
 * You should now be back in the workbench directory and able to see the notebook listings.
-
++
 [.bordershadow]
 image::01-04/13-custom-model-nb-view.png[width=75%]
 
+{empty} +
 
 == Run The *redbag-custom.ipynb* to Create a Trained Model
 Now that you have run your first notebook against an existing model, it's time to open the *redbag-custom.ipynb* notebook and using the guidance for running the first notebook, step through the Transfer Learning approach.
@@ -110,37 +124,51 @@ Now that you have run your first notebook against an existing model, it's time t
 [.bordershadow]
 image::01-04/13-custom-model-nb-view.png[width=75%]
 
-* Click the  *Restart the kernel* icon
+{empty} +
 
+* Click the  *Restart the kernel* icon
++
 [.bordershadow]
 image::01-04/14-custom-model-step-run.png[width=75%]
++
+{empty} +
 
 * Step through the notebook *Run the selected cell...* icon
-
++
 [.bordershadow]
 image::01-04/14.1-custom-model-step-run.png[width=75%]
-
++
 TIP: If you were exploring the file and and then restarted the kernel, ensure you move your cursor back up to the first cell in the notebook, so that when you step through you are starting at the beginning of the notebook
++
+{empty} +
 
 * You will notice as you step through this notebook that your loading a dataset of images stored in the github repository you cloaned.
-
++
 [.bordershadow]
 image::01-04/15-custom-model-dataset.png[width=75%]
++
+{empty} +
 
 * You will then import the model you just saved in the previous notebook.
-
++
 [.bordershadow]
 image::01-04/16-cm-import-model.png[width=75%]
++
+{empty} +
 
 * You will then go through a series of steps to train the new model using transfer learning, review some prediction results, further test, and then save the new model in the corrent workbench environment.
-
++
 [.bordershadow]
 image::01-04/17-cm-train-new-model.png[width=75%]
++
+{empty} +
 
 * Saving it with a Base64 Signature for easy usage with Edge applications
-
++
 [.bordershadow]
 image::01-04/18-cm-save-new-model.png[width=75%]
+
+{empty} +
 
 == Move the Trained model to an S3 Bucket *redbag-push-latest.ipynb*
 You can now go ahead and open the *redbag-push-latest.ipynb* notebook. This will move the local model to an S3 bucket and be available for the TensorFlow Serving service to load and use in the Edge application set.
@@ -148,7 +176,7 @@ You can now go ahead and open the *redbag-push-latest.ipynb* notebook. This will
 * *You will need to replace 2 variables at the top of the file before you run it.*
 ** bucket_models = `"{user}-production"`
 ** aws_access_key = `'{user}'`
-
++
 [.bordershadow]
 image::01-04/19-nb3-save2s3.png[width=100%]
 
@@ -167,38 +195,44 @@ In the AppDev module of this lab you will see how various application services c
 * You can send a test image directly to the tensorflow server via a REST call through the cURL utility.
 
 * First you need to open up a terminal window in Jupyter
++
+--
 ** Click on the Launcher tab
 ** Scroll down to the Terminal icon and click it to open a new terminal
-
+--
++
 [.bordershadow]
 image::01-04/terminal/1-Jupyter-terminal.png[width=100%]
-
++
 [.bordershadow]
 image::01-04/terminal/2-Jupyter-terminal.png[width=100%]
 
+{empty} +
 
 * You should now have a terminal window open and can run commands to test the Model Server directly.
 ** you might want to run the *pwd* command to ensure you are in the correct directory _/opt/app-root/src/edge-to-cloud-pipelines-workshop/workbench_
-
++
 [.bordershadow]
 image::01-04/terminal/3-Jupyter-terminal.png[width=100%]
 
+{empty} +
 
 * Review and Run *infer.sh*
 ** Double click on infer.sh in the workbench directory
 ** Notice that it constructs and runs a cURL command to directly invoke the Model Server, tf-server.  It passes in a green tea image (bali-tea.jpeg) to be evaluated.
-
++
 [.bordershadow]
 image::01-04/terminal/4-Jupyter-terminal.png[width=100%]
+
+{empty} +
 
 * Double click on the *Terminal* tab
 * Run the script by typing *./infer.sh* in the terminal window
 ** Your results should look similar to the following screenshot
-
++
 [.bordershadow]
 image::01-04/terminal/5-Jupyter-terminal.png[width=100%]
 
-
-
+{empty} +
 
 *Now let's invoke the model from an "Edge" Shopping Application*
