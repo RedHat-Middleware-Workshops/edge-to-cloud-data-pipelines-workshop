@@ -113,7 +113,7 @@ TIP: A quick reminder: The existing model v1 you have been using with the shoppi
 * Open the Shopping Application "Admin" Page
 +
 --
-** https://camel-edge-{user}-lab2-edge.{openshift_cluster_ingress_domain}/[https://camel-edge-{user}-lab2-edge.{openshift_cluster_ingress_domain}/,role=resource,window=_blank]
+** https://camel-edge-{user}-lab2-edge.{openshift_cluster_ingress_domain}/admin.html[https://camel-edge-{user}-lab2-edge.{openshift_cluster_ingress_domain}/admin.html,role=resource,window=_blank]
 --
 +
 [.bordershadow]
