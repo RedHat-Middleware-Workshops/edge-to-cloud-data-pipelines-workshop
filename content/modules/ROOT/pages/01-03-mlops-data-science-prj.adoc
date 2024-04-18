@@ -1,3 +1,5 @@
+:imagesdir: ../assets/images
+
 = MLOps - Building up the Data Science Project
 
 A Data Science Project was already created for each of you, but you will now need to fill it out with various items.
@@ -19,29 +21,36 @@ In this section, each of you will
 . Clone the git repo into your Workbench
 ** this contains all the code for the prototype model
 
+{empty} +
+
 == Open your project
 
 * If you completed the last section you should be looking at the main view into OpenShift AI Dashboard application
-
++
 [.bordershadow]
 image::01-03/01-OCP-AI-MainView.png[width=75%]
 
+{empty} +
 
 * In the OpenShift AI Dashboard application, navigate to the Data Science Projects menu on the left
-
++
 IMPORTANT: Your assigned user is {user}. Don't mess that up or things will break later on
-
++
 * Click on your your Project link which should be {userX}lab1-mlops
-
++
 IMPORTANT: As a reminder, it should **NOT** be `userX` (for you, `X` should be a number instead)
-
++
 [.bordershadow]
 image::01-03/02-OCPAI-DataScience-Prjs.png[width=75%]
 
-* You will now see the contents of your Data Science Project, which you will now finish building.
+{empty} +
 
+* You will now see the contents of your Data Science Project, which you will now finish building.
++
 [.bordershadow]
 image::01-03/03-OCPAI-DS-Prj-InitialView.png[]
+
+{empty} +
 
 == Create a Data Connection for the pipeline server
 
@@ -90,10 +99,14 @@ none
 [subs=attributes+]
 {user}-workbench 
 
+{empty} +
+
 * The result should look like:
 +
 [.bordershadow]
 image::01-03/05-AddDataConnection2.png[]
+
+{empty} +
 
 == Create a Pipeline Server
 
@@ -104,22 +117,28 @@ It is highly recommended to create your pipeline server before creating a workbe
 [.bordershadow]
 image::01-03/06-pipelineserver01.png[]
 
+{empty} +
+
 * Select the Data Connection created earlier (**S3 Data Connection**) and click the **Configure** button:
 +
 [.bordershadow]
 image::01-03/07-pipelineserver02.png[]
+
+{empty} +
 
 * When filling out your configuration, your screen will look like the following:
 +
 [.bordershadow]
 image::01-03/08-pipelineserver03.png[]
 
-* When your pipeline server is ready, your screen will look like the following:
+{empty} +
 
+* When your pipeline server is ready, your screen will look like the following:
++
 [.bordershadow]
 image::01-03/09-pipelineserver04.png[]
 At this point, your pipeline server is ready and deployed.
-
++
 IMPORTANT: You need to **wait** until that screen is ready. If it's still spinning, wait for it to complete. If you continue and create your workbench **before** the pipeline server is ready, your workbench will not be able to submit pipelines to it.
 
 
@@ -156,7 +175,7 @@ NOTE: Don't change the Persistent storage size
 Then
 *** Use existing data connection `click on`
 ** Data connection `S3 Data Connection`
-
++
 [.bordershadow]
 image::01-03/10.1-wb-data-conn.png[width=50%]
 
@@ -176,21 +195,28 @@ image::01-03/12-launch-workbench-02.png[]
 +
 [.bordershadow]
 image::01-03/13-launch-workbench-03.png[]
-+
+
+{empty} +
 
 * You should then click  *Create workbench* 
-
++
 [.bordershadow]
 image::01-03/13-launch-workbench-04.png[]
 
+{empty} +
 
 * Wait for your workbench to be fully started
 ** *It may take a couple minutes*
 ** Status will be `Running`
+
+{empty} +
+
 * Once it is, click the **Open** Link to connect to it.
 +
 [.bordershadow]
 image::01-03/14-open-wb-link.png[]
+
+{empty} +
 
 * Authenticate with the same credentials as earlier
 * You will be asked to accept the following settings:
@@ -205,6 +231,8 @@ image::01-03/15-accept.png[]
 [.bordershadow]
 image::01-03/16-jupyter-mainview.png[]
 
+{empty} +
+
 == Git-Clone the common repo
 
 We will clone the content of our Git repo so that you can access all the materials that were created as part of our prototyping exercise.
@@ -214,6 +242,8 @@ We will clone the content of our Git repo so that you can access all the materia
 +
 [.bordershadow]
 image::01-03/17-git-clone-1.png[width=75%]
++
+{empty} +
 +
 ** Enter the URL of the Git repo:
 +
@@ -227,10 +257,14 @@ image::01-03/17-git-clone-1.png[width=75%]
 [.bordershadow]
 image::01-03/18-git-clone-2.png[width=75%]
 
+{empty} +
+
 At this point, your project is ready for the work we want to do in it.
 
 You should a view similar to this.
 [.bordershadow]
 image::01-03/19-initial-git-load-view.png[width=85%]
+
+{empty} +
 
 *Now lets move onto working with the Juypter notebooks and build some models.*
