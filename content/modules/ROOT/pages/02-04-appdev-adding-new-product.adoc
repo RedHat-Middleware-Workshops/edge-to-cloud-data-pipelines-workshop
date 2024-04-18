@@ -120,8 +120,6 @@ image::02-03/08-open-shopper-url1.png[width=40%]
 
 * Use the downloaded images from the previous section.
 
-https://github.com/RedHat-Middleware-Workshops/edge-to-cloud-pipelines-workshop/tree/main/test-images/[Test Images]
-
 * Click on *Pick from Device*
 
 [.bordershadow]
