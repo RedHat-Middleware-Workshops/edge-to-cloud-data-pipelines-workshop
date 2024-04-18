@@ -1,3 +1,5 @@
+:imagesdir: ../assets/images
+
 == Investigating and Testing Edge Services
 
 == Overview
@@ -9,11 +11,15 @@ In this section you will:
 * Take a deeper look at the Model Server and how it can run an inference against an existing deployed model.
 * Test the Pricing Engine by invoking it directly.
 
+{empty} +
+
 NOTE: In the next section we will cover the *shopper* service which provides the shoppers GUI experience and invokes the above services and their dependencies.
 
 You should be logged into the OpenShift Console, if you timed out or logged out, follow these instructions.  
 
 xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift,role=resource,window=_blank]
+
+{empty} +
 
 == Operationalizing Models onto The Edge
 This section and the next section focus on services running in the Edge environment, and how they interact with deployed AI/ML models.
@@ -23,6 +29,8 @@ _In a later section in this lab you will walk through adding a new product to yo
 This section focuses on the edge experience using models. It is important to recognize our use case, which is one where store/kiosks are edge based in that they have their own remote compute capability in the store, sometimes called the "Near Edge."
 
 The customers and store associates use the shopping application (running on the Near Edge in the store) from their edge devices such as phones, Point of Sale devices, or computers.
+
+{empty} +
 
 == The Model Server *tf-server*
 
@@ -40,50 +48,64 @@ The tensorflow approach also allows for using models that are setup to work with
 
 * Start in Developer view of your {user}-lab2-edge project
 ** This may appear a bit cluttered as supporting services are also represented.
-
++
 [.bordershadow]
 image::02-02/01-edge-prj-main-pieces.png[width=75%]
+
+{empty} +
 
 * Locate the tf-server deployment
 ** You may have to click on the screen and hold/drag the mouse to locate it, or use the directional tools at the bottom of the screen.
 ** The tf-server deployment is a pre-built tensorflow engine packaged as a container image. You can learn more about TensorFlow from the TensorFlow site https://www.tensorflow.org/[TensorFlow Site,role=resource,window=_blank]
 
+{empty} +
+
 * Click on the *tf-server* deployment and look at the deployment configuration
 ** Click on the tf-server deployment icon
-
++
 [.bordershadow]
 image::02-02/01-tf-server.png[width=25%]
 
-** This will open the deployment pane to the right, click on the *Actions* dropdown box indicator
+{empty} +
 
+** This will open the deployment pane to the right, click on the *Actions* dropdown box indicator
++
 [.bordershadow]
 image::02-02/02-tf-server.png[width=75%]
 
-** Scroll down the listing and click on *Edit Deployment*
+{empty} +
 
+** Scroll down the listing and click on *Edit Deployment*
++
 [.bordershadow]
 image::02-02/03-tf-server.png[width=75%]
 
-** This will open the OpenShift Deployment editor
+{empty} +
 
+** This will open the OpenShift Deployment editor
++
 [.bordershadow]
 image::02-02/04-tf-server.png[width=75%]
 
+{empty} +
 
 ** Scroll down to the *Environment Variables* Section
-
++
 [.bordershadow]
 image::02-02/05-tf-server.png[width=75%]
-
++
 * Notice that in the OpenShift deployment of the TensorFlow Server we just need to set a few variables.  The model server (TensorFlow) just needs to know where the current models are located and which model should be picked.  Later when you train a new model the model server will automaticaly use the new model version deployed to the edge.
-
++
 In many scenarios you would put these variables into an OpenShift ConfigMap, and externalize them from the deployment manifest. We will cover that approach with the pricing server.
 
-* Close the deployment editor by clicking on *Cancel*
+{empty} +
 
+* Close the deployment editor by clicking on *Cancel*
++
 [.bordershadow]
 image::02-02/06-tf-server.png[width=75%]
 
+{empty} +
 
 == Invoking the Pricing Engine:  *price-engine*
 
@@ -98,64 +120,79 @@ The json file is actually deployed into OpenShift as a file tied to a ConfigMap 
 * First take a quick look at the ConfigMap *catalogue* that the Pricing Engine loads up and checks when it is invoked.
 
 * Click on ConfigMaps, then click on *catalogue*
-
++
 [.bordershadow]
 image::02-02/01-03-catalogue.png[width=75%]
 
-* Scroll down to the Data section. You can work more directly with this data and approach in the optional last section in this module.
+{empty} +
 
+* Scroll down to the Data section. You can work more directly with this data and approach in the optional last section in this module.
++
 [.bordershadow]
 image::02-02/01-03.1-catalogue.png[width=75%]
-
++
 [.bordershadow]
 image::02-02/01-03.2-catalogue.png[width=75%]
-
-
-
++
 NOTE:  The *shopper* service calls the *pricing-engine* and passes it the "item: <tea name>".  The microserivce then looks up and returns the label and price, if it is in the catalogue listing.
 
+{empty} +
 
-_There is an optional section at the end of the lab that takes you into the CamelK approach.  It uses DevSpaces and gives a deeper developer view of the possibilites of expanded use of application services and inner loop development on OpenShift._
+TIP: _There is an optional section at the end of the lab that takes you into the CamelK approach.  It uses DevSpaces and gives a deeper developer view of the possibilites of expanded use of application services and inner loop development on OpenShift._
 
-the following steps allow you to directly invoke the Pricing Engine.
+The following steps allow you to directly invoke the Pricing Engine.
+
+{empty} +
 
 === Steps
 
 * You should be in the topology pane of the developer view in the OpenShift Console.
-
++
 [.bordershadow]
 image::02-02/01-edge-prj-main-pieces.png[width=75%]
 
+{empty} +
+
 * Locate the *price-engine* deployment
 ** You may have to click on the screen and hold/drag the mouse to locate it, or use the directional tools at the bottom of the screen.
-
++
 [.bordershadow]
 image::02-02/01-price-engine.png[width=20%]
 
+{empty} +
+
 * Click on the *price-engine* deployment
 * When the Deployment screen appears, click on Details
-
++
 [.bordershadow]
 image::02-02/02-price-engine.png[width=75%]
 
-* Scroll down till you see the Pod icon
+{empty} +
 
+* Scroll down till you see the Pod icon
++
 [.bordershadow]
 image::02-02/04-price-engine.png[width=75%]
-
++
 Notice that if you were carrying out some scalability testing on the pricing service you could quickly increase the pod count. You could also setup an auto-pod scaler configuration.  This type of functionality might be important for large surges of customers.
 
-* Click on the *Resources* tab
+{empty} +
 
+* Click on the *Resources* tab
++
 [.bordershadow]
 image::02-02/05-price-engine.png[width=75%]
 
-* Scroll down till you get the exposed Route
+{empty} +
 
+* Scroll down till you get the exposed Route
++
 [.bordershadow]
 image::02-02/06-price-engine.png[width=75%]
-
++
 The Route exposes the Pricing Engine outside of our OpenShift Cluster. In many real-world scenarios the pricing services may actually be in a different cluster and not remotely installed with the Shopping Application.  In those cases you can still call the Pricing Engine through its exposed route.
+
+{empty} +
 
 We will simulate that now by calling the pricing engine directly using it's exposed route URL instead of it's cluster limited service definition.
 
@@ -165,7 +202,7 @@ include::partial$ocp-open-cmd-line-terminal.adoc[]
 
 
 * Now you can test the pricing engine directly by running a Curl command in the terminal window.
-
++
 [.console-input]
 [source,adoc]
 [subs=attributes+]
@@ -174,9 +211,11 @@ curl \
 http://price-engine-edge1.{openshift_cluster_ingress_domain}/price
 
 * You should see output such as the following.
-
++
 [.bordershadow]
 image::02-02/07-price-engine.png[]
+
+{empty} +
 
 Now that you have been able to test the functionality of two key parts of our Edge application, Let's work with the *shopper* application that calls these services.
 
