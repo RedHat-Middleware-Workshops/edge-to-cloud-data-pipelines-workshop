@@ -106,6 +106,7 @@ none
 [.bordershadow]
 image::01-03/05-AddDataConnection2.png[]
 
+* click *Add data connection*
 {empty} +
 
 == Create a Pipeline Server
