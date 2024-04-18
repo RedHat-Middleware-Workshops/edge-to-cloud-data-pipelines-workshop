@@ -7,7 +7,7 @@ In this lab each user will be exposed to an _Art of The Possible Approach_ for h
 Each user will perform the following tasks:
 
 * Log into OpenShift Console and review their existing AppDev (edge application) project
-* Review and test the Model Serving component against an existing image detection model.
+* Review in-depth the Model Serving component that we tested in Lab 1.
 * Review and test the Pricing Engine service.
 * Review and test the Red Hat Camel Quarkus based shopping application.
 * Initiate a pipeline run for the training, building, and deployment of a new image detection model.
@@ -23,10 +23,20 @@ Each user will have all their required services available in their own OpenShift
 [.bordershadow]
 image::02-01/lab2-layout.png[width=100%]
 
+== Use Case
+
+The use case centers around a retail sales scenario, where a rapidly growing boutique tea and coffee chain needs to quickly offer new products for their customer base.  They have many remote stores and kiosks that need to cater to niche clientele. They would like to let customers use their computers and phones as the point of sale experience for purchases. 
+
+The store chain has a central data center and cloud based compute capabilities.  They also have edge based servers in larger stores, and smaller compute edge devices in kiosks and smaller stores.
+
+In our use case shoppers will be able to use their phones to bring up a web application to take pictures of packaged tea they want to purchase, and they could also upload pictures of tea they would like to see added to the store's offerings.
+
+The main portal "customers" will enter to take pictures of products in the store they want to purchase is the Shopping Application.
+
 
 == Shopping Application Components
 
-In our "Art of the Possible" scenario for this lab, we are using an "edge" application to call the deployed image detection model. This application is referred to as the *Shopping Application* and is made up of the following services:
+In our "Art of the Possible" scenario for this lab, we are using an "edge" application to call the deployed image detection model. This composite application is referred to as the *Shopping Application* and is made up of the following services:
 
 
 * *The _Shopping GUI_* : This is the OpenShift deployment called  *shopper*. It is a Red Hat Camel Quarkus application that provides a GUI for shoppers to take pictures or load pictures of items they want to purchase.  The web based frontend can run on a computer or on phone web browsers.  This service works with the other services on the edge to identify the product and offer a price back to the shopper.
@@ -57,15 +67,18 @@ If you are using the customized version of the instructions, the information bel
 In a new window or tab, open the following URL and log into OpenShift:
 
 * The Red Hat OpenShift Console login page:
-** https://console-openshift-console.{openshift_cluster_ingress_domain}/[https://console-openshift-console.{openshift_cluster_ingress_domain}/]
+** https://console-openshift-console.{openshift_cluster_ingress_domain}/[https://console-openshift-console.{openshift_cluster_ingress_domain}/,role=resource,window=_blank]
 
 * Enter your credentials as detailed above (as detailed above)
 
 [.bordershadow]
 image::02-01/ocp-login.png[width=75%]
 
+TIP: Throughout this lab you will end up having multiple web browser tabs open.  Make sure you are careful not to close tabs, as you may need them further in the exercises.  Shortcuts will be provided throughout the lab to help you log back in, if you accidently lose connection or time out of a session.
+
 * After you authenticate, you should be taken into your *{user}-lab2-edge project*:
-** You need to ensure you are in developer view, and have clicked on the Topology view option as indicated in the screenshot below.
+** You need to ensure you are in *Developer* perspective, and have clicked on the *Topology* view option as indicated in the screenshot below.
 
 [.bordershadow]
 image::02-01/ocp-edge-init-project.png[width=75%]
+

@@ -6,7 +6,7 @@ The previous section introduced the main application components making up the co
 In this section you will:
 
 * Learn about how AI/ML models can be deployed or _operationalized_ on the edge.
-* Test the Model Server by invoking it via a REST call, causing it to run an inference against an existing deployed model.
+* Take a deeper look at the Model Server and how it can run an inference against an existing deployed model.
 * Test the Pricing Engine by invoking it directly.
 
 NOTE: In the next section we will cover the *shopper* service which provides the shoppers GUI experience and invokes the above services and their dependencies.
@@ -24,7 +24,9 @@ This section focuses on the edge experience using models. It is important to rec
 
 The customers and store associates use the shopping application (running on the Near Edge in the store) from their edge devices such as phones, Point of Sale devices, or computers.
 
-== Invoking and Testing the Model Server *tf-server*
+== The Model Server *tf-server*
+
+You already had a brief experience with the Model Server in the MlOps (lab 1). Here you will gain a deeper perspective on how it operates on the edge and within an OpenShift environment.
 
 There are many different model building and model serving engines and topologies that an Edge architecture can use.  Red Hat OpenShift AI supports using commerical 3rd party approaches, and also allows developers and data scientists to use upstream open source approaches.
 
@@ -36,12 +38,6 @@ The tensorflow approach also allows for using models that are setup to work with
 
 === Steps
 
-First Ensure that you have downloaded the test images to your lab laptop. You should have done this in Lab 1, if you did not you can download them now.
-
-include::partial$ocp-open-cmd-line-terminal.adoc[]
-
-The following steps allow you to directly call the Model Server running in your {user}-lab2-edge project.  You will invoke it directly using a REST call thrugh the cURL utility.
-
 * Start in Developer view of your {user}-lab2-edge project
 ** This may appear a bit cluttered as supporting services are also represented.
 
@@ -50,7 +46,7 @@ image::02-02/01-edge-prj-main-pieces.png[width=75%]
 
 * Locate the tf-server deployment
 ** You may have to click on the screen and hold/drag the mouse to locate it, or use the directional tools at the bottom of the screen.
-** The tf-server deployment is a pre-built tensorflow engine packaged as a container image. You can learn more about TensorFlow from the TensorFlow site https://www.tensorflow.org/[TensorFlow Site]
+** The tf-server deployment is a pre-built tensorflow engine packaged as a container image. You can learn more about TensorFlow from the TensorFlow site https://www.tensorflow.org/[TensorFlow Site,role=resource,window=_blank]
 
 * Click on the *tf-server* deployment and look at the deployment configuration
 ** Click on the tf-server deployment icon
@@ -88,37 +84,6 @@ In many scenarios you would put these variables into an OpenShift ConfigMap, and
 [.bordershadow]
 image::02-02/06-tf-server.png[width=75%]
 
-* Test with a cURL (You need a terminal window)
-
-include::partial$ocp-open-cmd-line-terminal.adoc[]
-
-* You can send a test image directly to the tensorflow server via a REST call through the cURL utility.
-
-** Binary mode
-To send an image in binary via HTTP, copy the following curl command into the web terminal and hit enter/return:
-
-[.console-input]
-[source,adoc]
-[subs=attributes+]
-MY_IMAGE=./images/small-dog.jpeg && \
-MY_ROUTE=http://localhost:8080 && \
-curl -H 'Content-Type:application/octet-stream' ${MY_ROUTE}/binary --data-binary @${MY_IMAGE}
-
-You should see a result like the following:
-
-** JSON mode
-To send a JSON message containing the image encoded in base64 use the following curl command:
-
-[.console-input]
-[source,adoc]
-[subs=attributes+]
-MY_IMAGE=./images/small-dog.jpeg && \
-MY_ROUTE=http://localhost:8080 && \
-(echo -n '{"image": "'; base64 $MY_IMAGE; echo '"}') | \
-curl -X POST -H "Content-Type: application/json" -d @- ${MY_ROUTE}/detection
-
-You should see a result like the following
-
 
 == Invoking the Pricing Engine:  *price-engine*
 
@@ -150,7 +115,7 @@ image::02-02/01-03.2-catalogue.png[width=75%]
 NOTE:  The *shopper* service calls the *pricing-engine* and passes it the "item: <tea name>".  The microserivce then looks up and returns the label and price, if it is in the catalogue listing.
 
 
-_There is an optional section at the end of the lab that takes you into the CamelK route.  This uses DevSpaces and gives a deeper developer view of the possibilites of expanded use of application services and inner loop development on OpenShift._
+_There is an optional section at the end of the lab that takes you into the CamelK approach.  It uses DevSpaces and gives a deeper developer view of the possibilites of expanded use of application services and inner loop development on OpenShift._
 
 the following steps allow you to directly invoke the Pricing Engine.
 
@@ -171,7 +136,7 @@ image::02-02/01-price-engine.png[width=20%]
 * When the Deployment screen appears, click on Details
 
 [.bordershadow]
-image::02-02/03-price-engine.png[width=75%]
+image::02-02/02-price-engine.png[width=75%]
 
 * Scroll down till you see the Pod icon
 
@@ -194,7 +159,8 @@ The Route exposes the Pricing Engine outside of our OpenShift Cluster. In many r
 
 We will simulate that now by calling the pricing engine directly using it's exposed route URL instead of it's cluster limited service definition.
 
-* If you lost your Web Terminal, create another instance.
+*OpenShift Web Terminal*: Inside OpenShift there is an ability to open a terminal window, which runs a container on the cluster, and allows users to invoke command line instructions.
+
 include::partial$ocp-open-cmd-line-terminal.adoc[]
 
 
@@ -208,6 +174,9 @@ curl \
 http://price-engine-edge1.{openshift_cluster_ingress_domain}/price
 
 * You should see output such as the following.
+
+[.bordershadow]
+image::02-02/07-price-engine.png[]
 
 Now that you have been able to test the functionality of two key parts of our Edge application, Let's work with the *shopper* application that calls these services.
 
