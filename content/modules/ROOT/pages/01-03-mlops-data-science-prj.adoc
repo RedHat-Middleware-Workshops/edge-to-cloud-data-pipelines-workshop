@@ -35,6 +35,12 @@ image::01-03/01-OCP-AI-MainView.png[width=75%]
 * In the OpenShift AI Dashboard application, navigate to the Data Science Projects menu on the left
 +
 IMPORTANT: Your assigned user is {user}. Don't mess that up or things will break later on
+
+* You should see two projects listed.  You want to work with the *{user}-lab1-mlops* project 
+
+[.bordershadow]
+image::01-03/02-OCPAI-DataScience-Prjs.png[width=75%]
+
 +
 * Click on your your Project link which should be {userX}lab1-mlops
 +
