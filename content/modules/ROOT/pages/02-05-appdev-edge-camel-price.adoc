@@ -81,13 +81,6 @@ image::02-05/devspaces-pick-visual-mode.png[width=75%]
 
 {empty} +
 
-* When the Workspace fully opens, close the Welcome page.
-+
-[.bordershadow]
-image::02-05/devspaces-close-welcome.png[width=75%]
-
-{empty} +
-
 * You will now see the initial view of the loaded lab github project.
 +
 [.bordershadow]
@@ -108,16 +101,17 @@ image::02-05/camel-price/01-initial-loaded-github-prj.png[width=75%]
 
 You should by now ready to work on your DevSpaces development environment.
 
-* Unfold the explorer view of the project by clicking on the indicated folders in the explorer pane.
-    ** you should end up view the three files in the *camel-price* subdirectory
+* You should see several files in the folder view, and we will soon be working with them.
 +
 [.bordershadow]
-image::02-05/camel-price/02-open-price-engine-files.png[width=75%]
+image::02-05/camel-price/01-initial-loaded-github-prj.png[width=75%]
+
 
 {empty} +
 
 * You now need to create a command terminal to enter commands
-// ** Option 1 for opening a new terminal
+** Click on the hamburger menu on the Left side of the DevSpace window, and continue to click on the unfolding menus to create a terminal window.
+** The screenshot below shows the sequence of steps
 +
 [.bordershadow]
 image::02-05/camel-price/03-create-terminal1.png[width=75%]
@@ -169,12 +163,12 @@ oc new-project {user}-lab2-extra
 +
 You should see in the output a line similar to:
 +
+[.bordershadow]
+image::02-05/camel-price/05-extra-prj.png[width=75%]
 [subs=attributes+]
-----
-Now using project "{user}-lab2-extra" on server "https://172.30.0.1:443".
-----
 +
-{empty} +
+{empty} 
+
 // ** Make sure to hit Enter afterwards
 // +
 // [.bordershadow]
@@ -194,7 +188,16 @@ Now using project "{user}-lab2-extra" on server "https://172.30.0.1:443".
 +
 --
 ** *catalogue.json* acts a simple listing of products and prices that is read by the CamelK route.  It will be converted into an OpenShift ConfigMap resource.
++
+[.bordershadow]
+image::02-05/camel-price/06-catalogue.png[width=75%]
+
 ** *main.xml* contains the main _Camel K_ service definition. It exposes a REST endpoint that the shopping service can call to look up a price on a product identified by the model server. It's implemented as an xml Camel Route.
++
+[.bordershadow]
+image::02-05/camel-price/06.1-main.png[width=75%]
+
+
 --
 +
 [NOTE]
@@ -236,7 +239,7 @@ kamel run *.xml --name price-engine \
 --resource configmap:catalogue@/deployments/config
 +
 [.bordershadow]
-image::02-05/camel-price/10-kamel-run-price-engine.png[width=75%]
+image::02-05/camel-price/10-kamel-run-price-engine.png[width=100%]
 
 {empty} +
 
@@ -254,7 +257,7 @@ NOTE: the command above pipes the output to `JQ` for a pretty-print JSON renderi
 You should see output such as the following.
 +
 [.bordershadow]
-image::02-05/camel-price/10.1-return-curl-price-engine.png[width=75%]
+image::02-05/camel-price/10.1-return-curl-price-engine.png[width=100%]
 
 {empty} +
 
