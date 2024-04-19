@@ -52,7 +52,18 @@ image::01-02/ocp-login.png[width=75%]
 
 {empty} +
 
-* After you authenticate, you should be taken into your *{user}-lab1-mlops* project, and the result should look like:
+* If this is the first time you have logged into the OpenShift Cluster you will probably see this view.
+** You should click on the *X* or *Skip Tour* button
++
+[.bordershadow]
+image::01-02/1.0-initial-prj-view.png[width=75%]
++
+** You will then be taken to a project listing where you should pick *{user}-lab1-mlops*
++
+[.bordershadow]
+image::01-02/1.0.1-initial-prj-view.png[width=75%]
+
+* You should be taken into your *{user}-lab1-mlops* project, and the result should look like:
 +
 [.bordershadow]
 image::01-02/1.1-initial-prj-view.png[width=75%]

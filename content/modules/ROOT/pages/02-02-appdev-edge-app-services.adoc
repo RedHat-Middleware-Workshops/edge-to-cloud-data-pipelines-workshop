@@ -215,6 +215,15 @@ http://price-engine-edge1.{openshift_cluster_ingress_domain}/price
 [.bordershadow]
 image::02-02/07-price-engine.png[]
 
+* You can now shutdown the Web Terminal Window by clicking on the *X* in the upper right-hand corner of the window
++
+[.bordershadow]
+image::02-02/08-close-web-terminal.png[]
+* And clicking *Yes* at the following confirmation MessageBox
++
+[.bordershadow]
+image::02-02/09-confirm-terminal-close.png[width=50%]
+
 {empty} +
 
 Now that you have been able to test the functionality of two key parts of our Edge application, Let's work with the *shopper* application that calls these services.
