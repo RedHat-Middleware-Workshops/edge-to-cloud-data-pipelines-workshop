@@ -1,0 +1,14 @@
+schemaVersion: 2.2.2
+metadata:
+  name: camel-on-quarkus-minimal
+components:
+  - name: tools
+    container:
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
+      memoryLimit: 10G
+      cpuLimit: 8000m
+      cpuRequest: 1000m
+projects:
+  - name: lab-2
+    zip:
+      location: https://github.com/RedHat-Middleware-Workshops/edge-to-cloud-data-pipelines-workshop/raw/main/devspaces/lab2.zip
