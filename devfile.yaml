@@ -8,7 +8,16 @@ components:
       memoryLimit: 10G
       cpuLimit: 8000m
       cpuRequest: 1000m
-projects:
+
+# projects:
+#   - name: lab-2
+#     zip:
+#       location: https://github.com/RedHat-Middleware-Workshops/edge-to-cloud-data-pipelines-workshop/raw/main/devspaces/lab2.zip
+
+starterProjects:
   - name: lab-2
-    zip:
-      location: https://github.com/RedHat-Middleware-Workshops/edge-to-cloud-data-pipelines-workshop/raw/main/devspaces/lab2.zip
+    subDir: devspaces/lab2
+    git:
+      remotes:
+        origin: https://github.com/RedHat-Middleware-Workshops/edge-to-cloud-data-pipelines-workshop
+  

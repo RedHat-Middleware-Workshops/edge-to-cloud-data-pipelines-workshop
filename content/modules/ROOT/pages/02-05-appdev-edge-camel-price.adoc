@@ -19,7 +19,7 @@ Click the link below to provision your exercise in DevSpaces:
 NOTE: The launcher below will open in a new browser tab
 
 
-* https://devspaces.{openshift_cluster_ingress_domain}/#https://github.com/RedHat-Middleware-Workshops/edge-to-cloud-pipelines-workshop.git[Launch Lab in _DevSpaces_,role=resource,window=_blank]
+* https://devspaces.{openshift_cluster_ingress_domain}/#https://raw.githubusercontent.com/RedHat-Middleware-Workshops/edge-to-cloud-data-pipelines-workshop/main/devfile.yaml[Launch Lab in _DevSpaces_,role=resource,window=_blank]
 
 
 
