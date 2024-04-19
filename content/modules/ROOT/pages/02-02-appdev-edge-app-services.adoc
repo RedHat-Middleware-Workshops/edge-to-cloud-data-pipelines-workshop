@@ -208,7 +208,7 @@ include::partial$ocp-open-cmd-line-terminal.adoc[]
 [subs=attributes+]
 curl \
 -H "item: tea-lemon" \
-http://price-engine-edge1.{openshift_cluster_ingress_domain}/price
+http://price-engine-{user}-lab2-edge.{openshift_cluster_ingress_domain}/price
 
 * You should see output such as the following.
 +

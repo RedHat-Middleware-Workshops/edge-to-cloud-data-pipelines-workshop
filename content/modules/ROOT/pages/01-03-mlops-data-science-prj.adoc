@@ -133,6 +133,7 @@ image::01-03/07-pipelineserver02.png[]
 {empty} +
 
 * When filling out your configuration, your screen will look like the following:
+** Click *Configure pipeline server*
 +
 [.bordershadow]
 image::01-03/08-pipelineserver03.png[]

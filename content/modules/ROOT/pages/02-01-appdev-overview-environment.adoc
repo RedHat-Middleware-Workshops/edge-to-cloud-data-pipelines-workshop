@@ -30,11 +30,13 @@ image::02-01/lab2-layout.png[width=100%]
 
 == Use Case
 
-The use case centers around a retail sales scenario, where a rapidly growing boutique tea and coffee chain needs to quickly offer new products for their customer base.  They have many remote stores and kiosks that need to cater to niche clientele. They would like to let customers use their computers and phones as the point of sale experience for purchases. 
+The use case centers around a retail sales scenario, where a rapidly growing boutique chain that sells packaged tea and coffee needs to quickly offer new products for their customer base.  They have many remote stores and kiosks that need to cater to niche clientele. They would like to let customers use their computers and phones as the point of sale experience for purchases. 
 
 The store chain has a central data center and cloud based compute capabilities.  They also have edge based servers in larger stores, and smaller compute edge devices in kiosks and smaller stores.
 
-In our use case shoppers will be able to use their phones to bring up a web application to take pictures of packaged tea they want to purchase, and they could also upload pictures of tea they would like to see added to the store's offerings.
+In our use case shoppers will be able to use their phones to bring up a web application to take pictures of packaged tea they see displayed in the store that they want to purchase. They could also upload pictures of tea they would like to see added to the store's offerings.
+
+In addition store personnel can upload images of potential new products, and the corporate office can upload marketing images from vendors to train and operationalize new models to quickly add new products.
 
 The main portal "customers" will enter to take pictures of products in the store they want to purchase is the Shopping Application.
 
@@ -76,7 +78,7 @@ If you are using the customized version of the instructions, the information bel
 {empty} +
 
 === Log into the OpenShift Console
-In a new window or tab, open the following URL and log into OpenShift:
+If you are not logged into the OpenShift Console, First check your other browser tabs to see if it is open in another tab.  If not, reconnect/restart your OpenShift Console session, using the following link and your user credentials.
 
 * The Red Hat OpenShift Console login page:
 ** https://console-openshift-console.{openshift_cluster_ingress_domain}/[https://console-openshift-console.{openshift_cluster_ingress_domain}/,role=resource,window=_blank]

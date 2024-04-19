@@ -80,6 +80,8 @@ image::01-02/1.1-initial-prj-view1.png[width=75%]
 [.bordershadow]
 image::01-02/1.1-initial-prj-view3.png[width=75%]
 
+NOTE: The alert user may notice that the service *tf-server* (the model server) may be going through a crash loop. _Spoiler Alert_: This is expected behavior, because you haven't built and deployed an AI/ML model yet for it to load, but you will later in the lab...
+
 {empty} +
 
 === Log into OpenShift AI

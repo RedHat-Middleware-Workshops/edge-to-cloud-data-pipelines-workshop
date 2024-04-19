@@ -41,6 +41,7 @@ image::01-04/02.1-folder-nav1.png[width=75%]
 {empty} +
 
 . Open the notebook called `redbag-base.ipynb`
+.. Double-click on the file name to open it.
 +
 [.bordershadow]
 image::01-04/03-folder-nav1-file1.png[width=75%]
@@ -72,7 +73,7 @@ image::01-04/07-example-nb1-execution-view.png[width=75%]
 +
 If the output of this notebook looks suspicious, please inform the people leading the lab.
 
-* Now look at the model directory and to confirm that the notebook did save the new models locally in the workbench directory
+* Now look at the *models* directory and to confirm that the notebook did save the new models locally in the workbench directory
 +
 [.bordershadow]
 image::01-04/08-models-dir1.png[width=75%]
@@ -156,6 +157,8 @@ image::01-04/16-cm-import-model.png[width=75%]
 +
 {empty} +
 
+TIP:  Some of the steps take some time to complete so you may experience some wait time during the training and testing steps
+
 * You will then go through a series of steps to train the new model using transfer learning, review some prediction results, further test, and then save the new model in the corrent workbench environment.
 +
 [.bordershadow]
@@ -179,6 +182,8 @@ You can now go ahead and open the *redbag-push-latest.ipynb* notebook. This will
 +
 [.bordershadow]
 image::01-04/19-nb3-save2s3.png[width=100%]
+
+NOTE:  Remember to restart the kernel and step through the notebook, as you did in the prior two notebooks.
 
 == Directly Invoke the Model Server
 
@@ -226,12 +231,14 @@ image::01-04/terminal/4-Jupyter-terminal.png[width=100%]
 
 {empty} +
 
-* Double click on the *Terminal* tab
-* Run the script by typing *./infer.sh* in the terminal window
+* Click on the *Terminal* tab
+* Run the script by typing *./infer.sh* in the terminal window and hit Return/Enter to execute the script.
 ** Your results should look similar to the following screenshot
 +
 [.bordershadow]
 image::01-04/terminal/5-Jupyter-terminal.png[width=100%]
+
+* At this point you can close the web browser tabs for the OpenShift AI project, and the Jupyter Workbench tab. 
 
 {empty} +
 
