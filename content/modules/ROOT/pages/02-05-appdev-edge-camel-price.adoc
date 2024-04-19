@@ -18,9 +18,7 @@ Click the link below to provision your exercise in DevSpaces:
 
 NOTE: The launcher below will open in a new browser tab
 
-// * https://devspaces.apps.sandbox-m3.1530.p1.openshiftapps.com/#https://github.com/brunoNetId/testche.git[Launch Lab in _DevSpaces_,role=resource,window=_blank]
 
-// * https://devspaces.apps.cluster-mzp4h.sandbox1377.opentlc.com/#https://github.com/RedHat-Middleware-Workshops/edge-to-cloud-pipelines-workshop.git[Launch Lab in _DevSpaces_,role=resource,window=_blank]
 * https://devspaces.{openshift_cluster_ingress_domain}/#https://github.com/RedHat-Middleware-Workshops/edge-to-cloud-pipelines-workshop.git[Launch Lab in _DevSpaces_,role=resource,window=_blank]
 
 
@@ -111,7 +109,7 @@ image::02-05/camel-price/01-initial-loaded-github-prj.png[width=75%]
 You should by now ready to work on your DevSpaces development environment.
 
 * Unfold the explorer view of the project by clicking on the indicated folders in the explorer pane.
-    ** you should end up view the two files in the *camel-price* subdirectory
+    ** you should end up view the three files in the *camel-price* subdirectory
 +
 [.bordershadow]
 image::02-05/camel-price/02-open-price-engine-files.png[width=75%]
