@@ -65,7 +65,6 @@
     <route id="load-catalogue">
         <from uri="direct:load-catalogue"/>
         <to uri="language:constant:resource:classpath:catalogue.json"/>
-        <!-- <to uri="language:constant:resource:file:/deployments/config/catalogue.json"/> -->
     </route>
 
 </routes>

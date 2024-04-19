@@ -8,23 +8,29 @@
             https://camel.apache.org/schema/spring/camel-spring.xsd">
 
 
-	<!-- Main Price Engine service -->
-    <!-- Provides a price tag for a given item header -->
+	<!-- Main Price Engine Service -->
+    <!-- Provides a price tag for a given product (item header) -->
     <route id="main">
         <from uri="platform-http:/price"/>
 
+        <!-- Loads the catalogue -->
         <to uri="direct:load-catalogue"/>
         
+        <!-- Finds the product details from the Catalogue -->
         <setBody>
             <jsonpath>$[?(@.item == '${header.item}')]</jsonpath>
         </setBody>
 
+        <!-- Logs the result of the query -->
         <log message="${body}"/>
 
+        <!-- Queries always return arrays (collection of results) -->
+        <!-- We extract the first result -->
         <setBody>
             <simple>${body[0]}</simple>
         </setBody>
         
+        <!-- If the given product is not specific ('other'), we return a list of products available -->
         <choice>
             <when>
                 <simple>${body[item]} == "other"</simple>
@@ -34,6 +40,7 @@
             </when>
         </choice>
 
+        <!-- We render the result to JSON -->
         <marshal>
             <json/>
         </marshal>
