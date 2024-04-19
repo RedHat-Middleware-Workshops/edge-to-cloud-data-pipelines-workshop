@@ -1,6 +1,6 @@
 schemaVersion: 2.2.2
 metadata:
-  name: camel-on-quarkus-minimal
+  name: devspaces-labs
 components:
   - name: tools
     container:
