@@ -2,6 +2,8 @@
 
 = Defining, Deploying, and Testing The Pricing Engine
 
+NOTE: This is an *OPTIONAL* section, but recommended for the highly caffeinated students, or dev and ops players looking to dive into inner loop applications services enablement on OpenShift.
+
 == Overview
 In this section you will investigate the existing pricing engine, deploy it, and then test it.  The pricing service aka *camel-price* service was introduced in an earlier section for this lab.
 
@@ -22,17 +24,9 @@ NOTE: The launcher below will open in a new browser tab
 * https://devspaces.{openshift_cluster_ingress_domain}/#https://raw.githubusercontent.com/RedHat-Middleware-Workshops/edge-to-cloud-data-pipelines-workshop/main/devfile.yaml[Launch Lab in _DevSpaces_,role=resource,window=_blank]
 
 
-
-
-// Use the following steps to open a new DevSpaces instance and create a workspace for the lab github project.
-// * Locate and Click on the DevSpaces menu item in OpenShift
-
-// [.bordershadow]
-// image::02-05/devspaces-menu-item.png[width=50%]
-
 {empty} +
 
-Then follow the steps behind to onboard into DevSpaces.
+Then follow the steps below to onboard into DevSpaces.
 
 * Click on the *Log in with OpenShift* button
 +
@@ -86,20 +80,12 @@ image::02-05/devspaces-pick-visual-mode.png[width=75%]
 [.bordershadow]
 image::02-05/camel-price/01-initial-loaded-github-prj.png[width=75%]
 
-{empty} +
-
-// * The first time you enter the DevSpaces IDE your view should be similar to the following.
-// +
-// [.bordershadow]
-// image::02-05/devspaces-initialview.png[width=75%]
-
-// {empty} +
 
 {empty} +
 
 == Reviewing The Current Pricing Engine
 
-You should by now ready to work on your DevSpaces development environment.
+You should by now be ready to work on your DevSpaces development environment.
 
 * You should see several files in the folder view, and we will soon be working with them.
 +
@@ -111,19 +97,13 @@ image::02-05/camel-price/01-initial-loaded-github-prj.png[width=75%]
 
 * You now need to create a command terminal to enter commands
 ** Click on the hamburger menu on the Left side of the DevSpace window, and continue to click on the unfolding menus to create a terminal window.
-** The screenshot below shows the sequence of steps
+** The screenshot below shows the sequence of steps.
 +
 [.bordershadow]
 image::02-05/camel-price/03-create-terminal1.png[width=75%]
 
 {empty} +
 
-// ** Option 2 for opening a new terminal.
-// +
-// [.bordershadow]
-// image::02-05/camel-price/04-create-terminal2.png[width=75%]
-
-// {empty} +
 
 * You should see a terminal window open in the bottom portion of the screen.
 +
@@ -148,12 +128,6 @@ image::02-05/camel-price/06-copy-paste-permission.png[width=75%]
 +
 {empty} +
 
-// * Confirm you are in the correct directory by entering *pwd* and hitting return/enter at the command prompt.
-// +
-// [.bordershadow]
-// image::02-05/camel-price/04.2-confirm-pwd-prj.png[width=75%]
-
-// {empty} +
 
 * Create a new project (namespace) to work on an empty and clean target:
 [.console-input]
@@ -169,20 +143,6 @@ image::02-05/camel-price/05-extra-prj.png[width=75%]
 +
 {empty} 
 
-// ** Make sure to hit Enter afterwards
-// +
-// [.bordershadow]
-// image::02-05/camel-price/07-moveto-user-project.png[width=75%]
-
-// {empty} +
-
-
-// * Another view of the terminal
-// +
-// [.bordershadow]
-// image::02-05/camel-price/05-oc-project-terminal.png[width=75%]
-
-// {empty} +
 
 * We will now review the main files that makeup the *camel-price* service
 +
@@ -209,12 +169,12 @@ Of less relevance, but if you feel curious, also look at:
 
 {empty} +
 
-* You will be copying and pasting some multi-line commands.
+* In some of the following steps, you will be copying and pasting some multi-line commands.
 +
 The first time you do this you may be asked to confirm this.
 +
 [.bordershadow]
-image::02-05/camel-price/08-copy-paste-warning-lines.png[width=75%]
+image::02-05/camel-price/08-copy-paste-warning-lines.png[width=50%]
 
 {empty} +
 
