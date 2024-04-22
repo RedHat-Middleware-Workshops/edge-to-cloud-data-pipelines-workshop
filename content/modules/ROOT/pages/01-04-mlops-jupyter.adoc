@@ -72,8 +72,10 @@ NOTE: As you click through the cells notice the markup comments indicating what 
 image::01-04/07-example-nb1-execution-view.png[width=75%]
 +
 If the output of this notebook looks suspicious, please inform the people leading the lab.
++
+{empty} +
 
-* Now look at the *models* directory and to confirm that the notebook did save the new models locally in the workbench directory
+. Now look at the *models* directory and to confirm that the notebook did save the new models locally in the workbench directory
 +
 [.bordershadow]
 image::01-04/08-models-dir1.png[width=75%]
@@ -98,7 +100,7 @@ NOTE: When looking at the *models* directory you will notice two different model
 +
 {empty} +
 
-* Now return back to the main *workbench* directory where the notebooks are located.
+. Now return back to the main *workbench* directory where the notebooks are located.
 ** click on the *...* directory indicator as shown in the following screenshot
 +
 [.bordershadow]
