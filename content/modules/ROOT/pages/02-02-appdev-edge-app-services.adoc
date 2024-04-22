@@ -15,9 +15,12 @@ In this section you will:
 
 NOTE: In the next section we will cover the *shopper* service which provides the shoppers GUI experience and invokes the above services and their dependencies.
 
-You should be logged into the OpenShift Console, if you timed out or logged out, follow these instructions.  
+[NOTE]
+--
+You should be logged into the OpenShift Console, if you timed out, lost your browser tab, or logged out, follow these instructions.  
 
 xref:includes/01-ocp-re-open-console.adoc[Log Back into OpenShift,role=resource,window=_blank]
+--
 
 {empty} +
 
