@@ -113,7 +113,7 @@ In this Art of the Possible Lab, the business logic to decide a price is impleme
 
 _When building edge applications consisting of multiple services.  You can quickly create small micro services in OpenShift to test functionality for different scenarios._
 
-The Pricing Engine is a Red Hat CamelK micro service that quickly loads up a product pricing list that is written in json.
+The Pricing Engine is a Red Hat Camel K micro service that quickly loads up a product pricing list that is written in json.
 
 The json file is actually deployed into OpenShift as a file tied to a ConfigMap that is associated with the *price-engine*.
 
@@ -138,7 +138,7 @@ NOTE:  The *shopper* service calls the *pricing-engine* and passes it the "item:
 
 {empty} +
 
-TIP: _There is an optional section at the end of the lab that takes you into the CamelK approach.  It uses DevSpaces and gives a deeper developer view of the possibilites of expanded use of application services and inner loop development on OpenShift._
+TIP: _There is an optional section at the end of the lab that takes you into the Camel K approach.  It uses DevSpaces and gives a deeper developer view of the possibilites of expanded use of application services and inner loop development on OpenShift._
 
 The following steps allow you to directly invoke the Pricing Engine.
 

@@ -9,7 +9,7 @@ In this section you will investigate the existing pricing engine, deploy it, and
 
 The approach taken in this lab is to implement a simple pricing engine using Red Hat CamelK, which is a lightweight cloud native integration and data transformation technology. It is one of the main implementations of the upstream Camel project.  It provides developers with over 200 pre-built connectors to message brokers, databases, etc.. One also has the ability to quickly implement REST services, and manipulate data packets and protocol headers in powerful ways.
 
-Red Hat CamelK implements these capabilities as "Routes," which can be written in most modern programming languages and also as xml and yaml syntax.  Red Hat is also investigating visual editors such as Kaoto to build routes.
+Red Hat Camel K implements these capabilities as "Routes," which can be written in most modern programming languages and also as xml and yaml syntax.  Red Hat is also investigating visual editors such as Kaoto to build routes.
 
 {empty} +
 
@@ -147,7 +147,7 @@ image::02-05/camel-price/05-extra-prj.png[width=75%]
 * We will now review the main files that makeup the *camel-price* service
 +
 --
-** *catalogue.json* acts a simple listing of products and prices that is read by the CamelK route.  It will be converted into an OpenShift ConfigMap resource.
+** *catalogue.json* acts a simple listing of products and prices that is read by the Camel K route.  It will be converted into an OpenShift ConfigMap resource.
 +
 [.bordershadow]
 image::02-05/camel-price/06-catalogue.png[width=75%]
@@ -190,7 +190,7 @@ image::02-05/camel-price/09-create-cm-price.png[width=75%]
 
 {empty} +
 
-*  Now you can copy the following command to load and run the CamelK route in the OpenShift {user}-lab2-edge project
+*  Now you can copy the following command to load and run the Camel K route in the OpenShift {user}-lab2-edge project
 +
 [.console-input]
 [source,adoc]
@@ -203,7 +203,20 @@ image::02-05/camel-price/10-kamel-run-price-engine.png[width=100%]
 
 {empty} +
 
-* Now you test the pricing engine directly by running a Curl command in the terminal window.
+* Since we are working in a terminal, let's give a nod to command line heros who prefer this approach as opposed to all gui based approaches.  Let's look at a couple more things the *kamel* cli can do for us.
+** Copy/Paste the following command to get a listing of our currently running Camel K services.
++
+[.console-input]
+[source,adoc]
+[subs=attributes+]
+kamel get
++
+[.bordershadow]
+image::02-05/camel-price/10.0.1-kamel-run-price-engine.png[width=100%]
+
+{empty} +
+
+* Now you can test the pricing engine directly by running a Curl command in the terminal window.
 +
 [.console-input]
 [source,adoc]
@@ -221,10 +234,22 @@ image::02-05/camel-price/10.1-return-curl-price-engine.png[width=100%]
 
 {empty} +
 
-* At this point you can back up to the browser tabs and click on the OpenShift Console tab to view the project with the price-engine running as a service.
+* Let's take another look at what the cli can provide us in our inner loop environment. Copy/Paste the following command to get a view of the logs for the container our Camel K service is running inside.
++
+[.console-input]
+[source,adoc]
+[subs=attributes+]
+kamel logs price-engine
++
+[.bordershadow]
+image::02-05/camel-price/10.2-kamel-run-price-engine.png[width=100%]
+
+* From a GUI perspective, you can back up to the browser tabs and click on the OpenShift Console tab to view the project with the price-engine running as a service.
 +
 [.bordershadow]
 image::02-05/camel-price/11-final-topology.png[width=75%]
 
 
+== Summary
 
+This Optional Exercise was intended to give you a peak into how developers can rapidly build out services in an OpenShift environment, and perform this from an inner loop standpoint.  OpenShift provides the DevSpaces IDE, which is hosted as a containerized capability on OpenShift.  From a developer perspective, it runs as a web browser based IDE.  This allows developers to login in and quickly run a defined organizationally compliant environment that enables a developer to quickly develop, deploy, and test cloud native micro services on OpenShift. This can be further extended through CI/CD approaches incorporating git repositories, pipelines, and GitOps.  In this exercise we looked at this through the lens of Camel K, a rich cloud native programming approach that can provide key application service capabilities. For example, in this lab Edge based development can include integrating with AI/ML deployed model servers, data sources, and client facing applications.  Ask your lab instructors if you want to learn more about Red Hat's approach to providing a powerful application platform through OpenShift.
