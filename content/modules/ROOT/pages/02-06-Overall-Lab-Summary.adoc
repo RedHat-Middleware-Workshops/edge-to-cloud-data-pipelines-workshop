@@ -1,0 +1,13 @@
+:imagesdir: ../assets/images
+
+= Overall Lab Summary
+
+Whether you experienced this lab at Red Hat Summit, or through a Red Hat led onsite enablement, or independently through the Red Hat Developer Sandbox, we hope you have found it engaging and empowering.
+
+This lab covered a lot of territory.  We built it around a use case related to retail sales.  Enabling remote stores to rapidly meet customer needs in modern terms.  Through an _Art of The Possible_ Mantra, It incorporated AI/ML and application development approaches that together provide enterprise solutions from the edge to the cloud.
+
+Really, though, these approaches can be applied to many industries and business scenarios.
+
+Red Hat OpenShift is the industry leading Application Platform that along with RHEL, and Red Hat Application Services provides AI/ML platform capabilities for building and running AI/ML driven applications.  Together these Red Hat capabilities support best of breed approaches with Open Source and 3rd Party tooling.
+
+Hopefully you can pursue some Art of The Possible options within your own organization, leveraging Red Hat capabilities.  We are always ready to go on that journey with you.
