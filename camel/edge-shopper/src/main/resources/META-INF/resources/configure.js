@@ -5,10 +5,11 @@ const hideButtons = () => {
     const ingestion = document.getElementById("btn-ingestion");
     if (ingestion) ingestion.style.display = "block";
     window.enableMQTT = true;
-  } else {
+  } 
+  // else {
     const ingestion = document.getElementById("btn-ingestion");
     if (ingestion) ingestion.style.display = "none";
-  }
+  // }
 };
 
 hideButtons();
