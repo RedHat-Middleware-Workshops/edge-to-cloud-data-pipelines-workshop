@@ -7,7 +7,7 @@
 ** After a slight delay while loading, the Web Terminal command line terminal will open at the bottom of the screen
 +
 [.bordershadow]
-image::partials/ocp-web-terminal.png[width=75%]
+image::partials/ocp-web-terminal.png[]
 --
 +
 The Web Terminal runs inside a container in an OpenShift namespace, so you can interact with cluster resources and services directly. Most common command line utilities for working with OpenShift are pre-installed.
