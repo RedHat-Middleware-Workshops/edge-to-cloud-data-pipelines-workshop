@@ -108,3 +108,8 @@ image::01-05/tea-price.png[width=50%]
 {empty} +
 
 TIP: You should now close the Shopping Application web browser tab.  We will be using a more advanced Shopping Application in the next Lab and you don't want to accidently invoke the wrong one.
+
+== Closing Thoughts
+Congratulations, you did it! You just completed the first Lab.  This MLOps lab took you on a journey inside OpenShift that had you build out an OpenShift AI Project, which included the powerful Jupyter IDE.  You were able to load and run notebooks that focused on leveraging a TensorFlow approach to transfer learning in order to add products to our store's detection model.  Our "edge" shopping application was then able to use that operationalized model with a test image.
+
+Let's continue the journey by clicking on the *Next* link below to take you into lab 2, where you will move into the application development and application services side of this use case.
