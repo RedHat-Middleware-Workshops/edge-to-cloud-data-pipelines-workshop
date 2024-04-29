@@ -27,3 +27,7 @@ hs_err_pid*
 replay_pid*
 
 www
+
+.cache
+
+.camel-jbang
