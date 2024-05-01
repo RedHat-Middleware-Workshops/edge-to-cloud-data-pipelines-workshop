@@ -145,7 +145,7 @@ image::02-03/17-negative-bali.png[width=50%]
 
 {empty} +
 
-This takes takes us the end of reviewing the major parts of the Shopping Application.  In the next section you will dive back into the overall use case driving this approach, and see how the overall "Art of The Possible" comes together.
+This takes takes us to the end of reviewing the major parts of the Shopping Application.  In the next section you will dive back into the overall use case driving this approach, and see how the overall "Art of The Possible" comes together.
 
 *Let's get going we have customers who want a new kind of tea offering!*
 

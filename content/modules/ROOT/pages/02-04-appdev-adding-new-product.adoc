@@ -148,7 +148,7 @@ image::02-04/monitor-view2.png[width=75%]
 
 TIP: You will use the Shopping Application here, just like you did in the previous section
 
-* Try out the shopping app again and see if it recognizes the new product.
+* Try out the shopping app again and see if it recognizes the new product. *If you still have the shopping app running in another tab you can go to that tab directly, otherwise re-launch the shopper service as described here.*
 ** In the Topology view of the OpenShift Console located the *shopper* deployment.
 * Open up the shopper web page.
 +
