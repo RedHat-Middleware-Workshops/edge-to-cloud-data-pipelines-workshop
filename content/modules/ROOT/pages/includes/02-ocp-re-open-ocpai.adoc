@@ -19,7 +19,7 @@ image::includes/02/01-ocpai-menu.png[width=75%]
 image::includes/02/01.1-ocp-ai-splash.png[width=75%]
 
 * Enter your existing credentials
-** Your account id: `{user}`
+** Your Username: `{user}`
 ** Your password: `{password}`
 
 [.bordershadow]

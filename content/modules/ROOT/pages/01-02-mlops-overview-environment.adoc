@@ -34,7 +34,7 @@ Each person attending this lab will have a unique user account in which to do th
 
 If you are using the customized version of the instructions, the information below will render properly. If not, you will see placeholder values instead.
 
-* Your account id: `{user}`
+* Your Username: `{user}`
 * Your password: `{password}`
 
 {empty} +
@@ -95,8 +95,8 @@ image::01-02/1.1.2-ocp-ai-menu.png[width=80%]
 * The first time you log into OpenShift AI you will see a login splash screen, click on the login button and fill out your user login information.
 +
 --
-** Your account id: `{user}`
-** Your password: `{password}`
+** Your Username: `{user}`
+** Your Password: `{password}`
 --
 +
 [.bordershadow]

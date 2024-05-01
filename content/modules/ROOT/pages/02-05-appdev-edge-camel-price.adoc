@@ -38,7 +38,7 @@ image::02-05/login-splash.png[width=75%]
 * The first time you log into DevSpaces you will see a login splash screen, click on the login button and fill out your user login information.
 +
 --
-** Your account id: `{user}`
+** Your Username: `{user}`
 ** Your password: `{password}`
 --
 +

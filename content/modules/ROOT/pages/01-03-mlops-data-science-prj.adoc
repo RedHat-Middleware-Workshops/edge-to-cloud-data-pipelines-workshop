@@ -226,7 +226,14 @@ image::01-03/14-open-wb-link.png[]
 {empty} +
 
 * Authenticate with the same credentials as earlier
++
+--
+** Your Username: `{user}`
+** Your Password: `{password}`
+--
++
 * You will be asked to accept the following settings:
+
 ** Click *Allow selected permissions*
 +
 [.bordershadow]

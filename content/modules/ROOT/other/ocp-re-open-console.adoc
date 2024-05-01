@@ -5,5 +5,5 @@ If you have accidently logged out, timed out, or closed your OpenShift Console. 
 
 * The Red Hat OpenShift Console login page:
 ** https://console-openshift-console.apps.{openshift_cluster_ingress_domain}/[https://console-openshift-console.apps.{openshift_cluster_ingress_domain}/]
-* Your account id: `{user}`
+* Your Username: `{user}`
 * Your password: `{password}`

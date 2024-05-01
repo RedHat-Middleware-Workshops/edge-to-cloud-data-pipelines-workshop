@@ -72,7 +72,7 @@ Each person attending this lab will have a unique user account in which to do th
 
 If you are using the customized version of the instructions, the information below will render properly. If not, you will see placeholder values instead.
 
-* Your account id: `{user}`
+* Your Username: `{user}`
 * Your password: `{password}`
 
 {empty} +

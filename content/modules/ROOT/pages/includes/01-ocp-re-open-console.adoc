@@ -7,5 +7,5 @@ Log back in using the OpenShift Console link
 
 * The Red Hat OpenShift Console login page:
 ** https://console-openshift-console.{openshift_cluster_ingress_domain}/[https://console-openshift-console.{openshift_cluster_ingress_domain}/,role=resource,window=_blank]
-* Your account id: `{user}`
+* Your Username: `{user}`
 * Your password: `{password}`
