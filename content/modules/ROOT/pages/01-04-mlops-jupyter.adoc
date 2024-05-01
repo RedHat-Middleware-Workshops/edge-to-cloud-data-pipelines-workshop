@@ -54,25 +54,29 @@ image::01-04/03-folder-nav1-file1.png[width=75%]
 +
 [.bordershadow]
 image::01-04/04-restart-kernel-toolbar.png[width=75%]
-.. Click **Restart** :
+.. If a confirmation messagebox appears, Click **Restart** :
 +
 [.bordershadow]
 image::01-04/05-restart-kernel-mbox.png[width=75%]
 +
 {empty} +
 
-. Run each cell, by repeatedly clicking on the **run cell** in the toolbar
+. Run each cell, by repeatedly clicking on the **run cell** in the toolbar. *Some of the cells will take some time to complete*.
 +
 [.bordershadow]
 image::01-04/06-run-cell-notebook.png[width=75%]
 +
-NOTE: As you click through the cells notice the markup comments indicating what is occuring in each section, and also note the output of each code section
+NOTE: As you click through the cells notice the markup comments indicating what is occuring in each section, and also note the output of each code section.  *Some of the steps will take some time to complete, as they complete the cursor will advance to the next cell*.
 +
 [.bordershadow]
 image::01-04/07-example-nb1-execution-view.png[width=75%]
 +
 If the output of this notebook looks suspicious, please inform the people leading the lab.
 +
+. When the entire notebook has run you will see the following message at the bottom of the Notebook.
++
+[.bordershadow]
+image::01-04/07.1-end-of-notebook-run.png[width=50%]
 {empty} +
 
 . Now look at the *models* directory and to confirm that the notebook did save the new models locally in the workbench directory
@@ -123,6 +127,8 @@ image::01-04/13-custom-model-nb-view.png[width=75%]
 == Run The *redbag-custom.ipynb* to Create a Trained Model
 Now that you have run your first notebook against an existing model, it's time to open the *redbag-custom.ipynb* notebook and using the guidance for running the first notebook, step through the Transfer Learning approach.
 
+NOTE: In this notebook the *Train Model* and *Compile augmented model* steps will take up to a couple minutes to complete, depending upon the lab class size and the cluster load at that time.
+
 
 [.bordershadow]
 image::01-04/13-custom-model-nb-view.png[width=75%]
@@ -145,7 +151,7 @@ TIP: If you were exploring the file and and then restarted the kernel, ensure yo
 +
 {empty} +
 
-* You will notice as you step through this notebook that your loading a dataset of images stored in the github repository you cloaned.
+* You will notice as you step through this notebook that you are loading a dataset of images stored in the github repository you cloaned.
 +
 [.bordershadow]
 image::01-04/15-custom-model-dataset.png[width=75%]
@@ -161,7 +167,7 @@ image::01-04/16-cm-import-model.png[width=75%]
 
 TIP:  Some of the steps take some time to complete so you may experience some wait time during the training and testing steps
 
-* You will then go through a series of steps to train the new model using transfer learning, review some prediction results, further test, and then save the new model in the corrent workbench environment.
+* You will then go through a series of steps to train the new model using transfer learning, review some prediction results, further test, and then save the new model in the current workbench environment.
 +
 [.bordershadow]
 image::01-04/17-cm-train-new-model.png[width=75%]
@@ -178,7 +184,7 @@ image::01-04/18-cm-save-new-model.png[width=75%]
 == Move the Trained model to an S3 Bucket *redbag-push-latest.ipynb*
 You can now go ahead and open the *redbag-push-latest.ipynb* notebook. This will move the local model to an S3 bucket and be available for the TensorFlow Serving service to load and use in the Edge application set.
 
-* *You will need to replace 2 variables at the top of the file before you run it.*
+* *You will need to update 2 variables at the top of the file before you run it. They should be changed to the following values.*
 ** bucket_models = `"{user}-production"`
 ** aws_access_key = `'{user}'`
 +

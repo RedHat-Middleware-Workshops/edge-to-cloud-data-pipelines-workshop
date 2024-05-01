@@ -85,7 +85,7 @@ image::01-05/pick-from-device.png[width=50%]
 
 {empty} +
 
-* Pick a tea image from the file selector as explained by your lab instructors.
+* Pick the *tea-bali.jpg* "green tea image" from the file selector as explained by your lab instructors. (this is the packaged tea type we trained the model on).
 +
 [.bordershadow]
 image::01-05/choose-tea.png[width=50%]
@@ -100,16 +100,16 @@ image::01-05/pick-http.png[width=50%]
 
 {empty} +
 
-* If a price is present in the *price-engine* it will be flashed for a few seconds on the screen.  (If you conversely see *Other N/A*, then the image was not recognized as the new product).
+* If a price is present in the *price-engine* it will be flashed for a few seconds on the screen.  (If you conversely see *Other N/A*, then you probably picked a different tea type that the model has not been trained on yet.)
 +
 [.bordershadow]
 image::01-05/tea-price.png[width=50%]
 
 {empty} +
 
-TIP: You should now close the Shopping Application web browser tab.  We will be using a more advanced Shopping Application in the next Lab and you don't want to accidently invoke the wrong one.
+IMPORTANT: You should now close the Shopping Application web browser tab.  We will be using a more advanced Shopping Application in the next Lab and you don't want to accidently invoke the wrong one.
 
 == Closing Thoughts
-Congratulations, you did it! You just completed the first Lab.  This MLOps lab took you on a journey inside OpenShift that had you build out an OpenShift AI Project, which included the powerful Jupyter IDE.  You were able to load and run notebooks that focused on leveraging a TensorFlow approach to transfer learning in order to add products to our store's detection model.  Our "edge" shopping application was then able to use that operationalized model with a test image.
+Congratulations, you did it! You just completed the first Lab.  This MLOps lab took you on a journey inside OpenShift that had you build out an OpenShift AI Project, which included the powerful Jupyter IDE.  You were able to load and run notebooks that focused on leveraging a TensorFlow approach to transfer learning in order to add a product to our store's detection model.  Our "edge" shopping application was then able to use that operationalized model with a test image.
 
-Let's continue the journey by clicking on the *Next* link below to take you into lab 2, where you will move into the application development and application services side of this use case.
+Let's continue the journey by clicking on the *Next* link below to take you into lab 2, where you will move into the application development and application services side of this use case.  __These two labs are completely separate and not dependent upon each other.__
