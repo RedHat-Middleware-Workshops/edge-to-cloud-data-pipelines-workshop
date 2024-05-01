@@ -20,7 +20,7 @@ image::includes/02/01.1-ocp-ai-splash.png[width=75%]
 
 * Enter your existing credentials
 ** Your Username: `{user}`
-** Your password: `{password}`
+** Your Password: `{password}`
 
 [.bordershadow]
 image::includes/02/02-ocp-ai-login.png[width=75%]
