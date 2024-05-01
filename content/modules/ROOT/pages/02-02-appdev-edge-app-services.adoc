@@ -37,7 +37,7 @@ The customers and store associates use the shopping application (running on the 
 
 == The Model Server *tf-server*
 
-You already had a brief experience with the Model Server in the MlOps (lab 1). Here you will gain a deeper perspective on how it operates on the edge and within an OpenShift environment.
+You already had a brief experience with the Model Server in the MLOps (lab 1). Here you will gain a deeper perspective on how it operates on the edge and within an OpenShift environment.
 
 There are many different model building and model serving engines and topologies that an Edge architecture can use.  Red Hat OpenShift AI supports using commerical 3rd party approaches, and also allows developers and data scientists to use upstream open source approaches.
 
@@ -125,7 +125,7 @@ The json file is actually deployed into OpenShift as a file tied to a ConfigMap 
 * Click on ConfigMaps, then click on *catalogue*
 +
 [.bordershadow]
-image::02-02/01-03-catalogue.png[width=75%]
+image::02-02/01-03-catalogue.png[width=80%]
 
 {empty} +
 
@@ -165,7 +165,7 @@ image::02-02/01-price-engine.png[width=20%]
 {empty} +
 
 * Click on the *price-engine* deployment
-* When the Deployment screen appears, click on Details
+* When the Deployment screen appears, click on *Details*
 +
 [.bordershadow]
 image::02-02/02-price-engine.png[width=75%]
