@@ -139,7 +139,9 @@ image::02-04/monitor-view.png[width=75%]
 +
 [.bordershadow]
 image::02-04/monitor-view2.png[width=75%]
-
++
+IMPORTANT: Wait for the Tekton pipeline to finish. The process can take up to 3-5 minutes to complete.
++
 {empty} +
 
 * After the whole process completes, the new version of the model, trained to recognize the new tea type -- green-tea -- is pushed out to the store's "near" edge into the production bucket of the S3 storage, minio.
