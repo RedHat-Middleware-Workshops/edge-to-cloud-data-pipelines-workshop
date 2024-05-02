@@ -171,7 +171,7 @@ image::02-03/12-Pick-from-Device.png[width=75%]
 * From the file selection choose *tea-bali.jpg* which is the __Green Tea__ we wanted to add to the store.
 +
 [.bordershadow]
-image::02-03/13-choose-tea-earl-grey.png[width=75%]
+image::02-03/16-pick-tea-bali.png[width=75%]
 
 {empty} +
 
