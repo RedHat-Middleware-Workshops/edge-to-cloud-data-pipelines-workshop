@@ -100,7 +100,33 @@ image::01-04/09-models-dir2.png[width=75%]
 [.bordershadow]
 image::01-04/10-models-dir3-redbag.png[width=75%]
 +
-NOTE: When looking at the *models* directory you will notice two different model directories, which are base and redbag.  The *base* model directory is the build of the model that can inference against binary image files.  The *redbag* version of the model is the saved version that has a signature that allows for Base64 image format inferencing.  The TensorFlow approach we are using allows creating models that support Base64 encoding, which is easier to work with when building Edge applications that call the model.
+
+[NOTE]
+--
+When looking at the *models* directory you will notice two different model directories, which are base and redbag.
+
+- The *base* model directory is the build of the model that can inference against binary image files.
+- The *redbag* version of the model is the saved version that has a signature that allows for *_Base64_* image format inferencing.
+
+The TensorFlow approach we are using allows creating models that support Base64 encoding, which is easier to work with when building Edge applications that call the model.
+--
++
+{empty} +
++
+[%collapsible]
+.**How a Base64 Signature helps developers?** (click to reveal)
+======
+The image below shows a model that requires _Tensors_ as input. The developer is responsible to convert the image into _Tensor_ information in order to interact with the model. The output of the model is also _Tensor_ data and will require the developer to implement additional logic to convert into usable information.
+
+image::01-04/22-base64-signature-01.png[]
+
+In contrast, the illustration below shows a model created with a Base64 signature (interface). The complexity of handling Tensors is hidden from the developer. Converting an image to a Base64 encoding is much simpler, network efficient and the model output (_String_) doesn't require extra processing.
+
+image::01-04/23-base64-signature-02.png[]
+
+The *redbag* model includes the _Base64 Signature_ for easier inferencing.
+
+======
 +
 {empty} +
 
@@ -219,6 +245,8 @@ You can now go ahead and open the *redbag-push-latest.ipynb* notebook. This will
 image::01-04/19-nb3-save2s3.png[width=100%]
 
 NOTE:  Remember to restart the kernel and step through the notebook, as you did in the prior two notebooks.
+
+{empty} +
 
 == Directly Invoke the Model Server
 
