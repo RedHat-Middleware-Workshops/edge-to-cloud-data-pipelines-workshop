@@ -125,9 +125,36 @@ image::01-04/13-custom-model-nb-view.png[width=75%]
 {empty} +
 
 == Run The *redbag-custom.ipynb* to Create a Trained Model
-Now that you have run your first notebook against an existing model, it's time to open the *redbag-custom.ipynb* notebook and using the guidance for running the first notebook, step through the Transfer Learning approach.
+Now that you have run your first notebook against an existing model, it's time to open the *redbag-custom.ipynb* notebook and using the guidance for running the first notebook, step through the _Transfer Learning_ approach.
 
-NOTE: In this notebook the *Train Model* and *Compile augmented model* steps will take up to a couple minutes to complete, depending upon the lab class size and the cluster load at that time.
+{empty} +
+
+
+[%collapsible]
+.**What is _Transfer Learning_?** (click to reveal)
+======
+
+_Transfer Learning_ is a technique in machine learning where you reuse a pre-trained model to benefit from its capabilities and then customise to your needs. This is achieved by retaining most of its neuronal network layers, and replacing the last layers by a newly trained ones.
+
+In the image below an image recognition model has been trained with millions of images to learn how to identify the features of an image (edges, shadows, colors, ...). The last layers (in blue) are trained to classify the images. This model is able to identify animals, objects and other generic items.
+
+image::01-04/20-transfer-learning-01.png[]
+
+The model below was created by applying _Transfer Learning_. The last layers of the neuronal network have been replaced by new ones (in red) trained with images of fruits. This new model is capable of identifying fruits. 
+
+image::01-04/21-transfer-learning-02.png[]
+
+Training a model from scratch is very CPU hungry, requires vast amounts of training data, and the processing takes long time to complete. Applying the _Transfer Learning_ technique drastically reduces the time needed to complete the training of new models.
+
+// |===
+// {set:cellbgcolor:lightblue}test
+// |===
+======
+
+
+{empty} +
+
+NOTE: In this notebook the steps *_Train Model_* and *_Compile augmented model_* will take up to a couple minutes to complete, depending upon the lab class size and the cluster load at that time.
 
 
 [.bordershadow]
