@@ -211,9 +211,14 @@ include::partial$ocp-open-cmd-line-terminal.adoc[]
 [subs=attributes+]
 curl \
 -H "item: tea-lemon" \
-http://price-engine-{user}-lab2-edge.{openshift_cluster_ingress_domain}/price
+http://price-engine-{user}-lab2-edge.{openshift_cluster_ingress_domain}/price \
+| jq
++
+NOTE: the command above pipes the output to `JQ` for a pretty-print JSON rendering.
++
+{empty} +
 
-* You should see output such as the following.
+* You should see output such as the following:
 +
 [.bordershadow]
 image::02-02/07-price-engine.png[]
