@@ -11,3 +11,15 @@ Really, though, these approaches can be applied to many industries and business 
 Red Hat OpenShift is the industry leading Application Platform that along with RHEL, and Red Hat Application Services provides AI/ML platform capabilities for building and running AI/ML driven applications.  Together these Red Hat capabilities support best of breed approaches with Open Source and 3rd Party tooling.
 
 Hopefully you can pursue some Art of The Possible options within your own organization, leveraging Red Hat capabilities.  We are always ready to go on that journey with you.
+
+{empty} +
+
+= Finished early?
+
+Congratulations on completing this lab. If you have some spare time, keep learning about _Apache Camel_ and _OpenShift_:
+
+* Read the https://developers.redhat.com/products/redhat-build-of-apache-camel/overview[*_Apache Camel_* page in Red Hat Developers,role=resource,window=_blank] to learn more about the capabilities of Apache Camel.
+
+* Find more https://developers.redhat.com/products/redhat-build-of-apache-camel/getting-started[*_Apache Camel_* hands-on tutorials,role=resource,window=_blank] you can try for free in the *Developer Sandbox*.
+
+{empty} +
