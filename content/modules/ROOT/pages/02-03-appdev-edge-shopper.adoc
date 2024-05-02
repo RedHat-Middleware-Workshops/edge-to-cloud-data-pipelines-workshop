@@ -82,17 +82,17 @@ image::02-03/09.2-composite-url.png[width=100%]
 
 {empty} +
 
-* You may be asked to allow usage of your camera click *Allow*
-+
-[.bordershadow]
-image::02-03/10-allow-camera.png[width=40%]
-
-{empty} +
-
 * You should now see the main entry page to the application, Click *Enter Detection Mode*
 +
 [.bordershadow]
 image::02-03/11-shopper-index-page.png[width=75%]
+
+{empty} +
+
+* You may be asked to allow usage of your camera click *Allow*
++
+[.bordershadow]
+image::02-03/10-allow-camera.png[width=40%]
 
 {empty} +
 
