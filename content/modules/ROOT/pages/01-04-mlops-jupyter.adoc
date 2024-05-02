@@ -231,6 +231,8 @@ image::01-04/17-cm-train-new-model.png[width=75%]
 [.bordershadow]
 image::01-04/18-cm-save-new-model.png[width=75%]
 +
+{empty} +
++
 [%collapsible]
 .**How a Base64 Signature helps developers?** (click to reveal)
 ======
