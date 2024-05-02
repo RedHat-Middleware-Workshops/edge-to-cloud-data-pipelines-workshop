@@ -116,7 +116,7 @@ The TensorFlow approach we are using allows creating models that support Base64 
 [%collapsible]
 .**How a Base64 Signature helps developers?** (click to reveal)
 ======
-The image below shows a model that requires _Tensors_ as input. The developer is responsible to convert the image into _Tensor_ information in order to interact with the model. The output of the model is also _Tensor_ data and will require the developer to implement additional logic to convert into usable information.
+The image below shows a typical model requiring _Tensors_ as input. The developer is responsible to convert the image into _Tensor_ information in order to interact with the model. The output of the model is also _Tensor_ data and will require the developer to implement additional logic to convert into usable information.
 
 image::01-04/22-base64-signature-01.png[]
 
@@ -125,7 +125,6 @@ In contrast, the illustration below shows a model created with a Base64 signatur
 image::01-04/23-base64-signature-02.png[]
 
 The *redbag* model includes the _Base64 Signature_ for easier inferencing.
-
 ======
 +
 {empty} +
@@ -231,6 +230,18 @@ image::01-04/17-cm-train-new-model.png[width=75%]
 +
 [.bordershadow]
 image::01-04/18-cm-save-new-model.png[width=75%]
++
+[%collapsible]
+.**How a Base64 Signature helps developers?** (click to reveal)
+======
+The image below shows a typical model requiring _Tensors_ as input. The developer is responsible to convert the image into _Tensor_ information in order to interact with the model. The output of the model is also _Tensor_ data and will require the developer to implement additional logic to convert into usable information.
+
+image::01-04/22-base64-signature-01.png[]
+
+In contrast, the illustration below shows a model created with a Base64 signature (interface). The complexity of handling Tensors is hidden from the developer. Converting an image to a Base64 encoding is much simpler, network efficient and the model output (_String_) doesn't require extra processing.
+
+image::01-04/23-base64-signature-02.png[]
+======
 
 {empty} +
 
